@@ -30,7 +30,9 @@ ad_proc im_security_update_client_component { } {
     set sec_verbosity [parameter::get -package_id $package_id -parameter "SecurityUpdateVerboseP" -default "0"]
 
     global tcl_platform
-    set platform [lindex $tcl_platform(platform) 0]
+    set os_platform [lindex $tcl_platform(os) 0]
+    set os_version [lindex $tcl_platform(osVersion) 0]
+    set os_machine [lindex $tcl_platform(machine) 0]
 
     # Add the list of package versions to the URL in order to get 
     # the right messages
@@ -62,7 +64,10 @@ ad_proc im_security_update_client_component { } {
 
     if {0 != $sec_verbosity} {
 	append sec_url "email=[ns_urlencode [db_string email "select im_email_from_user_id(:current_user_id)"]]&"
-	append sec_url "os_version=[ns_urlencode $platform]&"
+	append sec_url "os_platform=[ns_urlencode $os_platform]&"
+	append sec_url "os_version=[ns_urlencode $os_version]&"
+	append sec_url "os_machine=[ns_urlencode $os_machine]&"
+
 	set postgres_version [exec psql --version]
 	append sec_url "pg_version=[ns_urlencode $postgres_version]&"
     }
