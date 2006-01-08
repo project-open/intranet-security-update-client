@@ -68,7 +68,8 @@ ad_proc im_security_update_client_component { } {
 	append sec_url "os_version=[ns_urlencode $os_version]&"
 	append sec_url "os_machine=[ns_urlencode $os_machine]&"
 
-	set postgres_version [exec psql --version]
+	set postgres_version "undefined"
+	catch {set postgres_version [exec psql --version]} errmsg
 	append sec_url "pg_version=[ns_urlencode $postgres_version]&"
     }
 
