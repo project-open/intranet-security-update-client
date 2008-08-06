@@ -53,13 +53,14 @@ ad_proc im_security_update_client_component { } {
 
     db_foreach package_versions $package_sql {
 
-	# delete "intranet-" and "acs-" prefix from packages to save space
-	if {[regexp {^intranet\-(.*)} $package_key match key]} { set package_key $key}
-	if {[regexp {^acs\-(.*)} $package_key match key]} { set package_key $key}
+#	regsub -all {\.} $version_name "" version_name
+
+	# shorten the "intranet-" and "acs-" prefix from packages to save space
+	if {[regexp {^intranet\-(.*)} $package_key match key]} { set package_key "i$key"}
+	if {[regexp {^acs\-(.*)} $package_key match key]} { set package_key "a$key"}
 
 	append sec_url "p.[string trim $package_key]=[string trim $version_name]&"
     }
-
 
     if {0 != $sec_verbosity} {
 	append sec_url "email=[string trim [db_string email "select im_email_from_user_id(:current_user_id)"]]&"
@@ -88,12 +89,13 @@ ad_proc im_security_update_client_component { } {
     }
 
 set ttt {
-	<pre>$sec_url</pre>
-	<pre>[string length $sec_url]</pre>
 }
 
     set sec_html "
-<iframe src=\"$sec_url\" width=\"90%\" height=\"100\" name=\"$security_update_l10n\">
+	<pre>$sec_url</pre>
+	<pre>[string length $sec_url]</pre>
+
+<iframe src=\"$sec_url\" width=\"90%\" height=\"500\" name=\"$security_update_l10n\">
   <p>$no_iframes_l10n</p>
 </iframe>
 
