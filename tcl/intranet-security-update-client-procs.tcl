@@ -89,13 +89,12 @@ ad_proc im_security_update_client_component { } {
     }
 
 set ttt {
+	<pre>$sec_url</pre>
+	<pre>[string length $sec_url]</pre>
 }
 
     set sec_html "
-	<pre>$sec_url</pre>
-	<pre>[string length $sec_url]</pre>
-
-<iframe src=\"$sec_url\" width=\"90%\" height=\"500\" name=\"$security_update_l10n\">
+<iframe src=\"$sec_url\" width=\"90%\" height=\"100\" name=\"$security_update_l10n\">
   <p>$no_iframes_l10n</p>
 </iframe>
 
