@@ -53,11 +53,11 @@ ad_proc im_security_update_client_component { } {
 
     db_foreach package_versions $package_sql {
 
-#	regsub -all {\.} $version_name "" version_name
+	regsub -all {\.} $version_name "" version_name
 
 	# shorten the "intranet-" and "acs-" prefix from packages to save space
-	if {[regexp {^intranet\-(.*)} $package_key match key]} { set package_key "i$key"}
-	if {[regexp {^acs\-(.*)} $package_key match key]} { set package_key "a$key"}
+	if {[regexp {^intranet\-(.*)} $package_key match key]} { set package_key "i-$key"}
+	if {[regexp {^acs\-(.*)} $package_key match key]} { set package_key "a-$key"}
 
 	append sec_url "p.[string trim $package_key]=[string trim $version_name]&"
     }
@@ -73,7 +73,7 @@ ad_proc im_security_update_client_component { } {
 	set postgres_version "undefined"
 	catch {set postgres_version [exec psql --version]} errmsg
 	if {[regexp {([0-9]+\.[0-9]+\.[0-9])} $postgres_version match v]} { set postgres_version $v}
-	append sec_url "pg_version=[string trim $postgres_version]&"
+	append sec_url "pg_version=[string trim $postgres_version]"
     }
 
 
