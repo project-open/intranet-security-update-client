@@ -135,8 +135,6 @@ db_foreach encur $enabled_currencies_sql {
 
 set html [im_security_update_update_currencies -update_xml $update_xml]
 ns_write $html
-ns_flush
-
 ns_write "<li>Extrapolating exchange rates:</li>\n"
 
 
