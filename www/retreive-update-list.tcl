@@ -30,7 +30,7 @@ set context_bar [im_context_bar $page_title]
 
 set projop "<span class=brandsec>&#93;</span><span class=brandfirst>project-open</span><span class=brandsec>&#91;</span>"
 set po "<span class=brandsec>&#93;</span><span class=brandfirst>po</span><span class=brandsec>&#91;</span>"
-set po_wiki "http://www.project-open.org/documentation"
+set po_wiki "http://www.project-open.org/en"
 
 # Redirects to ASUS terms & conditions if not yet agreed
 set asus_verbosity [im_security_update_asus_status]
@@ -54,7 +54,7 @@ set core_version [lindex $core_versions 0]
 
 
 set system_id [im_system_id]
-set service_url "http://www.project-open.org/intranet-asus-server/update-list"
+set service_url "http://www.project-open.net/intranet-asus-server/update-list"
 set full_url [export_vars -base $service_url {system_id core_version}]
 
 

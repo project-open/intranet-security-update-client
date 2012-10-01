@@ -18,7 +18,7 @@ ad_page_contract {
 
 set page_title [lang::message::lookup "" intranet-security-update-client.Account_Status "Account Status"]
 
-set po_server "http://www.project-open.org"
+set po_server "http://www.project-open.net"
 set po "&#93;project-open&#91;"
 
 set current_url [ns_conn url]

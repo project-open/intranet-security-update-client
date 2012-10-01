@@ -41,7 +41,7 @@ set core_version [lindex $core_versions 0]
 
 
 set system_id [im_system_id]
-set service_url "http://www.project-open.org/intranet-asus-server/update-list"
+set service_url "http://www.project-open.net/intranet-asus-server/update-list"
 set full_url [export_vars -base $service_url {system_id core_version}]
 
 

@@ -77,7 +77,7 @@ ad_proc -public im_security_update_exchange_rate_sweeper { } {
 ad_proc im_security_update_get_currency_update_url { } {
     Get the URL from which we can retreive an update XML file.
 } {
-    set currency_update_url [parameter::get_from_package_key -package_key "intranet-exchange-rate" -parameter "ExchangeRateUpdateUrl" -default "http://www.project-open.org/intranet-asus-server/exchange-rates.xml"]
+    set currency_update_url [parameter::get_from_package_key -package_key "intranet-exchange-rate" -parameter "ExchangeRateUpdateUrl" -default "http://www.project-open.net/intranet-asus-server/exchange-rates.xml"]
 
     # Construct the URL
     set system_id [im_system_id]
@@ -511,7 +511,7 @@ ad_proc im_security_update_client_component { } {
 
     set package_key "intranet-security-update-client"
     set package_id [db_string package_id "select package_id from apm_packages where package_key=:package_key" -default 0]
-    set sec_url_base [parameter::get -package_id $package_id -parameter "SecurityUpdateServerUrl" -default "http://www.project-open.org/intranet-asus-server/update-information"]
+    set sec_url_base [parameter::get -package_id $package_id -parameter "SecurityUpdateServerUrl" -default "http://www.project-open.net/intranet-asus-server/update-information"]
 
     # Verbose ASUS configuration?
     # May redirect to user-agreement to confirm ASUS terms & conditions
