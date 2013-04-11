@@ -527,6 +527,8 @@ ad_proc im_security_update_client_component { } {
     set os_platform [lindex $tcl_platform(os) 0]
     set os_version [lindex $tcl_platform(osVersion) 0]
     set os_machine [lindex $tcl_platform(machine) 0]
+    set tcl_version [info patchlevel]
+    set aol_version [ns_info version]
 
     # Add the list of package versions to the URL in order to get 
     # the right messages
@@ -616,7 +618,7 @@ ad_proc im_security_update_client_component { } {
     }
 
     # Check for upgrades to run
-    set upgrade_message "You are running &#93project-open&#91; version: [im_core_version]<br><br>"
+    set upgrade_message "You are running: <ul><li> &#93project-open&#91; version: [im_core_version]</li><li>Script version: $tcl_version</li><li>Web Server version: $aol_version</li></ul><br><br>"
     set script_list [im_check_for_update_scripts]
     append upgrade_message $script_list
     if {"" != $script_list} { append upgrade_message "<br>&nbsp;<br>\n" }
