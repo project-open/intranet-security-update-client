@@ -60,7 +60,7 @@ The ASUS service performs several actions:
 <br>
 <h2>Price</h2>
 <p>
-ASUS is a free service at the moment (October 2009). However, 
+ASUS is a free service at the moment (May 2013). However, 
 we plan to introduce a yearly fee for ASUS in the future.
 We will notify you about possible changes with three months in 
 advance. 
