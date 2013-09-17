@@ -530,6 +530,15 @@ ad_proc im_security_update_client_component { } {
     set tcl_version [info patchlevel]
     set aol_version [ns_info version]
 
+    # There's a chance that tcl_platform does not return any results 
+    if {[catch {
+	if { "" == $os_platform } { set os_platform $::tcl_platform(platform) }
+	if { "" == $os_version } { set os_version $::tcl_platform(osVersion) }
+	if { "" == $os_machine } { set os_machine $::tcl_platform(machine) }
+    } err_msg]} {
+	ns_log ERROR "Error evaluating tcl_platform(platform), tcl_platform(osVersion), tcl_platform(machine)"
+    }
+
     # Add the list of package versions to the URL in order to get 
     # the right messages
 
@@ -618,7 +627,8 @@ ad_proc im_security_update_client_component { } {
     }
 
     # Check for upgrades to run
-    set upgrade_message "You are running: <ul><li> &#93project-open&#91; version: [im_core_version]</li><li>Script version: $tcl_version</li><li>Web Server version: $aol_version</li></ul><br><br>"
+    set upgrade_message "Server Information: <ul><li> &#93project-open&#91; version: [im_core_version]</li><li>Platform: $os_platform</li><li>OS Version: $os_version</li><li>Script version: $tcl_version</li>"
+    append upgrade_message "<li>Web Server version: $aol_version</li><li>System Id: [im_system_id]</li></ul><br><br>"
     set script_list [im_check_for_update_scripts]
     append upgrade_message $script_list
     if {"" != $script_list} { append upgrade_message "<br>&nbsp;<br>\n" }
