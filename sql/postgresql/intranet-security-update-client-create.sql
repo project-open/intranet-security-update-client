@@ -33,7 +33,7 @@ BEGIN
 
 	v_menu := im_menu__new (
 		null,					-- p_menu_id
-		''acs_object'',				-- object_type
+		''im_menu'',				-- object_type
 		now(),					-- creation_date
 		null,					-- creation_user
 		null,					-- creation_ip
@@ -72,7 +72,7 @@ begin
 	--
 	v_plugin := im_component_plugin__new (
 		null,					-- plugin_id
-		''acs_object'',				-- object_type
+		''im_component_plugin'',		-- object_type
 		now(),					-- creation_date
 		null,					-- creation_user
 		null,					-- creation_ip
@@ -102,7 +102,7 @@ begin
 	--
 	v_plugin := im_component_plugin__new (
 		null,					-- plugin_id
-		''acs_object'',				-- object_type
+		''im_component_plugin'',		-- object_type
 		now(),					-- creation_date
 		null,					-- creation_user
 		null,					-- creation_ip
@@ -130,6 +130,50 @@ SELECT im_grant_permission(
 
 SELECT im_grant_permission(
 	(select plugin_id from im_component_plugins where plugin_name = 'Exchange Rates ASUS'),
+	(select group_id from groups where group_name = 'Senior Managers'), 
+	'read'
+);
+
+
+
+
+create or replace function inline_0 ()
+returns integer as ' 
+declare
+	v_plugin		integer;
+begin
+	-- Allow to store backups at the ASUS server
+	--
+	v_plugin := im_component_plugin__new (
+		null,					-- plugin_id
+		''im_component_plugin'',		-- object_type
+		now(),					-- creation_date
+		null,					-- creation_user
+		null,					-- creation_ip
+		null,					-- context_id
+		''Backup ASUS'',			-- plugin_name
+		''intranet-security-update-client'',	-- package_name
+		''left'',				-- location
+		''/intranet/admin/backup/index'',	-- page_url
+		null,					-- view_name
+		10,					-- sort_order
+		''im_security_update_backup_component''	-- component_tcl
+	);
+	return 0;
+end;' language 'plpgsql';
+select inline_0 ();
+drop function inline_0 ();
+
+
+
+SELECT im_grant_permission(
+	(select plugin_id from im_component_plugins where plugin_name = 'Backup ASUS'),
+	(select group_id from groups where group_name = 'Accounting'), 
+	'read'
+);
+
+SELECT im_grant_permission(
+	(select plugin_id from im_component_plugins where plugin_name = 'Backup ASUS'),
 	(select group_id from groups where group_name = 'Senior Managers'), 
 	'read'
 );

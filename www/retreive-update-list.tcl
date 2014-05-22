@@ -83,7 +83,7 @@ if {"" == $update_xml} {
     This means that your server(!) was not able to access the URL.<br>
     Please check the the Internet and firewall configuration of your
     server and verify that the 'nsd' (Linux) or 'nsd4' (Windows) 
-    process has access to the URL.<br>
+    process has access to the URL.<br>"
     ad_script_abort
     return
 }	
