@@ -806,7 +806,7 @@ ad_proc im_security_update_backup_component {
     append html "<li>ASUS Login Message: $login_message"
     append html "</ul>"
 
-    template::multirow create backup_files filename file_body extension date size
+    template::multirow create backup_files_sec_update filename file_body extension date size
 
     foreach root_node $root_nodes {
 	
@@ -820,7 +820,7 @@ ad_proc im_security_update_backup_component {
 		set file_date [apm_attribute_value -default "" $root_node date]
 		set file_name [xml_node_get_content $root_node]
 		set file_extension ""
-		template::multirow append backup_files \
+		template::multirow append backup_files_sec_update \
 		    $file_name \
 		    $file_name \
 		    $file_extension \
@@ -848,7 +848,7 @@ ad_proc im_security_update_backup_component {
 
 
     template::list::create \
-	-name backup_files \
+	-name backup_files_sec_update \
 	-key filename \
 	-elements [list \
 		       file_body [list \
@@ -871,7 +871,7 @@ ad_proc im_security_update_backup_component {
 	-actions $actions
 
     # Compile and execute the listtemplate
-    eval [template::adp_compile -string {<listtemplate name="backup_files"></listtemplate>}]
+    eval [template::adp_compile -string {<listtemplate name="backup_files_sec_update"></listtemplate>}]
     set form_html $__adp_output
     append html $form_html
 
