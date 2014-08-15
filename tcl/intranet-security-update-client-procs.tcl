@@ -160,8 +160,11 @@ ad_proc im_security_update_update_currencies {
 		    
 		    set currency_exists_p [util_memoize [list db_string currecy_exists "select count(*) from currency_codes where iso = '$currency_code'"]]
 		    if {!$currency_exists_p} {
-			db_dml new_currency_code "insert into currency_codes (iso,  currency_name) values (:currency_code, :currency_code)"
-			im_permission_flush
+			continue
+
+			# Fraber 140815: Creates too many unused currencies
+			# db_dml new_currency_code "insert into currency_codes (iso,  currency_name) values (:currency_code, :currency_code)"
+			# im_permission_flush
 		    }
 
 		    db_dml delete_entry "
