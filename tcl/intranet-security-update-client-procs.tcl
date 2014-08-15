@@ -149,7 +149,6 @@ ad_proc im_security_update_update_currencies {
 		set currency_code [apm_attribute_value -default "" $root_node iso]
 		set currency_day [apm_attribute_value -default "" $root_node day]
 		set exchange_rate [xml_node_get_content $root_node]
-		append html "<li>exchange_rate($currency_code,$currency_day) = $exchange_rate...\n"
 		
 		if {![info exists enabled_currencies_hash($currency_code)]} {
 		    set fill_hole_currency_hash($currency_code) 1
@@ -159,13 +158,10 @@ ad_proc im_security_update_update_currencies {
 		if {"" != $currency_code && "" != $currency_day} {
 		    
 		    set currency_exists_p [util_memoize [list db_string currecy_exists "select count(*) from currency_codes where iso = '$currency_code'"]]
-		    if {!$currency_exists_p} {
-			continue
-
-			# Fraber 140815: Creates too many unused currencies
-			# db_dml new_currency_code "insert into currency_codes (iso,  currency_name) values (:currency_code, :currency_code)"
-			# im_permission_flush
-		    }
+                    if {!$currency_exists_p} {
+                        continue
+                    }
+                    append html "<li>exchange_rate($currency_code,$currency_day) = $exchange_rate...\n"
 
 		    db_dml delete_entry "
 				delete  from im_exchange_rates
@@ -187,9 +183,6 @@ ad_proc im_security_update_update_currencies {
 				)
 		    "} err_msg]} {
 			append html "Error adding rates to currency '$currency_code':<br><pre>$err_msg</pre>"
-		    
-			# Add the currency to the list of active currencies
-			catch { db_dml insert_code "insert into currency_codes (iso, currency_name) values (:currency_code, :currency_code)" }
 		    }
 	
 		    # The dollar exchange rate is always 1.000, because the dollar
