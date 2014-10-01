@@ -636,9 +636,9 @@ ad_proc im_security_update_client_component { } {
 	</iframe>
 	<form action=\"$action_url\" method=POST>
 	    <input type=\"radio\" name=\"verbosity\" value=\"1\" $verbose_selected>Detailed
-	    [im_gif help "Choose this option for detailed security information. With this option the security update service transmits information about your configuration that might help us to assess your &#93project-open&#91; system configuration including package versions and operating system version information. It also includes your email address so that we can alert your in special situations."]
+	    [im_gif -translate_p 1 help "Choose this option for detailed security information. With this option the security update service transmits information about your configuration that might help us to assess your &#93project-open&#91; system configuration including package versions and operating system version information. It also includes your email address so that we can alert your in special situations."]
 	    <input type=\"radio\" name=\"verbosity\" value=\"0\" $anonymous_selected>Anonymous
-	    [im_gif help "Choose this option if you prefer not to reveal any information to &#93project-open&#91; that might identify you or your organization."]
+	    [im_gif -translate_p 1 help "Choose this option if you prefer not to reveal any information to &#93project-open&#91; that might identify you or your organization."]
 	    <input type=\"hidden\" name=\"return_url\" value=\"$return_url\">
 	    <input type=\"submit\" name=\"submit\" value=\"OK\">
 	</form>
