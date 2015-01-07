@@ -535,6 +535,15 @@ ad_proc im_security_update_client_component { } {
 	ns_log ERROR "Error evaluating tcl_platform(platform), tcl_platform(osVersion), tcl_platform(machine)"
     }
 
+    # Load Average
+    if {[catch {
+	set load_avg [exec bash -c "cat /proc/loadavg"]
+    } err_msg]} {
+	global errorInfo
+        ns_log ERROR "Error evaluating Load Average - $errorInfo"
+	set load_avg [lang::message::lookup "" intranet-security-update-client.CantEvaluateLoadAverage "Can't evaluate Load Average"]
+    }
+
     # Add the list of package versions to the URL in order to get 
     # the right messages
 
@@ -624,7 +633,7 @@ ad_proc im_security_update_client_component { } {
 
     # Check for upgrades to run
     set upgrade_message "Server Information: <ul><li> &#93project-open&#91; version: [im_core_version]</li><li>Platform: $os_platform</li><li>OS Version: $os_version</li><li>Script version: $tcl_version</li>"
-    append upgrade_message "<li>Web Server version: $aol_version</li><li>System Id: [im_system_id]</li></ul><br><br>"
+    append upgrade_message "<li>Web Server version: $aol_version</li><li>System Id: [im_system_id]</li><li>Load Average: $load_avg</li></ul><br><br>"
     set script_list [im_check_for_update_scripts]
     append upgrade_message $script_list
     if {"" != $script_list} { append upgrade_message "<br>&nbsp;<br>\n" }
