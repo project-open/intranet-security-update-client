@@ -49,7 +49,7 @@ ad_proc -public im_security_update_exchange_rate_sweeper { } {
     if {$days_since_update > $max_days_since_update} {
 
 	set currency_update_url [im_security_update_get_currency_update_url]
-	ns_log Notice "im_security_update_exchange_rate_sweeper: "
+	ns_log Notice "im_security_update_exchange_rate_sweeper: Updating ..."
 
 	if { [catch {
 	    set update_xml [ns_httpget $currency_update_url]
@@ -65,6 +65,8 @@ ad_proc -public im_security_update_exchange_rate_sweeper { } {
 	# Write out a log message
 	db_string log "select acs_log__debug('im_security_update_exchange_rate_sweeper', 'Successfully updated exchange rates')"
 
+    } else {
+	ns_log Notice "im_security_update_exchange_rate_sweeper: NOT UPDATING: days_since_update: days_since_update < $max_days_since_update"
     }
     ns_log Notice "im_security_update_exchange_rate_sweeper: Finished"
 }
