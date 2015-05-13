@@ -154,7 +154,7 @@ ad_proc im_security_update_update_currencies {
 				
 		# Insert values into the Exchange Rates table
 		if {"" != $currency_code && "" != $currency_day} {
-		    set currency_exists_p [util_memoize [list db_string currency_exists "select count(*) from currency_codes where iso = '$currency_code'"]]
+		    set currency_exists_p [util_memoize [list db_string currency_exists "select count(*) from currency_codes where iso = '$currency_code' and supported_p = 't'"]]
                     if {!$currency_exists_p} {
                         continue
                     }
