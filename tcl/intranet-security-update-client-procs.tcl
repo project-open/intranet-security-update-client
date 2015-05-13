@@ -151,15 +151,10 @@ ad_proc im_security_update_update_currencies {
 		set currency_code [apm_attribute_value -default "" $root_node iso]
 		set currency_day [apm_attribute_value -default "" $root_node day]
 		set exchange_rate [xml_node_get_content $root_node]
-		
-		if {![info exists enabled_currencies_hash($currency_code)]} {
-		    set fill_hole_currency_hash($currency_code) 1
-		}
-		
+				
 		# Insert values into the Exchange Rates table
 		if {"" != $currency_code && "" != $currency_day} {
-		    
-		    set currency_exists_p [util_memoize [list db_string currecy_exists "select count(*) from currency_codes where iso = '$currency_code'"]]
+		    set currency_exists_p [util_memoize [list db_string currency_exists "select count(*) from currency_codes where iso = '$currency_code'"]]
                     if {!$currency_exists_p} {
                         continue
                     }
@@ -171,7 +166,8 @@ ad_proc im_security_update_update_currencies {
 					currency = :currency_code
 		    "
 		
-		    if {[catch {db_dml insert_rates "
+		    if {[catch {
+			db_dml insert_rates "
 				insert into im_exchange_rates (
 					day,
 					currency,
@@ -183,7 +179,10 @@ ad_proc im_security_update_update_currencies {
 					:exchange_rate,
 					't'
 				)
-		    "} err_msg]} {
+		        "
+			# Delete the automatically generated entries before and after the new entry
+			im_exec_dml invalidate "im_exchange_rate_invalidate_entries (:currency_day::date, :currency_code)"
+		    } err_msg]} {
 			append html "Error adding rates to currency '$currency_code':<br><pre>$err_msg</pre>"
 		    }
 	
@@ -204,10 +203,13 @@ ad_proc im_security_update_update_currencies {
 	    }
 	}
     }
-    
+
     append html "<li>Freeing document nodes</li>\n"
     xml_doc_free $tree
- 
+
+    # Fill holes (= days without manual entries)
+    im_exec_dml fill_holes "im_exchange_rate_fill_holes()"
+    
     return $html
 }
 
@@ -818,7 +820,7 @@ ad_proc im_security_update_backup_component {
     foreach root_node $root_nodes {
 	
 	set root_node_name [xml_node_get_name $root_node]
-	ns_log Notice "im_security_update_update_currencies: node_name=$root_node_name"
+	ns_log Notice "im_security_update_backup_component: node_name=$root_node_name"
 	
 	switch $root_node_name {
 	    file {
