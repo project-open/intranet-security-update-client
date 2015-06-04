@@ -55,7 +55,7 @@ ns_write "<li>Getting exchange rates XML file from '$currency_update_url' ...\n"
 
 set update_xml ""
 if { [catch {
-	set update_xml [ns_httpget $currency_update_url]
+    set update_xml [ns_httpget $currency_update_url]
 } errmsg] } {
     ad_return_complaint 1 "Error while accessing the URL '$currency_update_url'.<br>
 	Please check your URL. The following error was returned: <br>
