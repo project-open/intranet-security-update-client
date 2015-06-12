@@ -30,7 +30,7 @@ set context_bar [im_context_bar $page_title]
 
 set projop "<span class=brandsec>&#93;</span><span class=brandfirst>project-open</span><span class=brandsec>&#91;</span>"
 set po "<span class=brandsec>&#93;</span><span class=brandfirst>po</span><span class=brandsec>&#91;</span>"
-set po_wiki "http://www.project-open.org/en"
+set po_wiki "http://www.project-open.com/en"
 
 # Redirects to ASUS terms & conditions if not yet agreed
 set asus_verbosity [im_security_update_asus_status]
