@@ -15,7 +15,7 @@ set return_url "[ad_conn url]?[ad_conn query]"
 set page_title "Load Update Information"
 set context_bar [im_context_bar $page_title]
 
-set update_url [ad_parameter -package_id [im_update_client_package_id] UpdateServerURL -default "&lt;UpdateServerURL&gt;"]
+set update_url [im_parameter -package_id [im_update_client_package_id] UpdateServerURL -default "&lt;UpdateServerURL&gt;"]
 
 
 set update_server "http://[lindex [split $update_url "/"] 2]"
