@@ -118,7 +118,7 @@ of the service or the product.
 <br>
 
 <form action="/intranet-security-update-client/update-preferences">
-<%= [export_form_vars return_url] %>
+<%= [export_vars -form {return_url}] %>
 <input type=radio name=verbosity value=1 checked>Enable full Automatic Security Update Service (ASUS)<br>
 <input type=radio name=verbosity value=0>Limit ASUS to anonymous data<br>
 <br>

@@ -436,7 +436,7 @@ ad_proc im_exchange_rate_update_component { } {
 		</p>
 	"]
 	<form action='/intranet-security-update-client/user-agreement'>
-	[export_form_vars return_url]
+	[export_vars -form {return_url}]
 	<input type=submit value='[lang::message::lookup "" intranet-exchange-rate.Enable_Full_ASUS "Update ASUS"]'>
 	</form>
 	"
@@ -454,7 +454,7 @@ ad_proc im_exchange_rate_update_component { } {
 		</p>
 	"]
 	<form action='/intranet-security-update-client/get-exchange-rates'>
-	[export_form_vars return_url]
+	[export_vars -form {return_url}]
 	<input type=submit value='[lang::message::lookup "" intranet-exchange-rate.Button_Get_Exchange_Rates_Now "Get Exchange Rates Now"]'>
 	</form>
         "
@@ -480,7 +480,7 @@ ad_proc im_exchange_rate_update_component { } {
 		</tr>
 		</table>
 	<form action='/shared/parameters' method=GET>
-	[export_form_vars return_url package_id]
+	[export_vars -form {return_url package_id}]
 	<input type=submit value='[lang::message::lookup "" intranet-exchange-rate.Edit_Parameters "Edit Parameters"]'>
 	</form>
 	"
