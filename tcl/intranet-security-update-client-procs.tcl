@@ -536,7 +536,7 @@ ad_proc im_security_update_client_component { } {
 	if { "" == $os_version } { set os_version $::tcl_platform(osVersion) }
 	if { "" == $os_machine } { set os_machine $::tcl_platform(machine) }
     } err_msg]} {
-	ns_log ERROR "Error evaluating tcl_platform(platform), tcl_platform(osVersion), tcl_platform(machine)"
+	ns_log Error "Error evaluating tcl_platform(platform), tcl_platform(osVersion), tcl_platform(machine)"
     }
 
     # Load Average
@@ -544,7 +544,7 @@ ad_proc im_security_update_client_component { } {
 	set load_avg [exec bash -c "cat /proc/loadavg"]
     } err_msg]} {
 	global errorInfo
-        ns_log ERROR "Error evaluating Load Average - $errorInfo"
+        ns_log Error "Error evaluating Load Average - $errorInfo"
 	set load_avg [lang::message::lookup "" intranet-security-update-client.CantEvaluateLoadAverage "Can't evaluate Load Average"]
     }
 
