@@ -1,5 +1,5 @@
 <master>
-<property name="title">@page_title;noquote@</property>
+<property name="doc(title)">@page_title;literal@</property>
 <property name="admin_navbar_label">admin</property>
 
 
@@ -119,10 +119,10 @@ of the service or the product.
 
 <form action="/intranet-security-update-client/update-preferences">
 <%= [export_vars -form {return_url}] %>
-<input type=radio name=verbosity value=1 checked>Enable full Automatic Security Update Service (ASUS)<br>
-<input type=radio name=verbosity value=0>Limit ASUS to anonymous data<br>
+<input type="radio" name="verbosity" value="1" checked>Enable full Automatic Security Update Service (ASUS)<br>
+<input type="radio" name="verbosity" value="0">Limit ASUS to anonymous data<br>
 <br>
-<input type=submit value="Enable ASUS">
+<input type="submit" value="Enable ASUS">
 </form>
 
 </td>

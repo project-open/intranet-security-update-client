@@ -72,7 +72,7 @@ if { [catch {
 } errmsg] } {
     ad_return_complaint 1 "Error while accessing the URL '$service_url'.<br>
     Please check your URL. The following error was returned: <br>
-    <blockquote><pre>[ad_quotehtml $errmsg]</pre></blockquote>"
+    <blockquote><pre>[ns_quotehtml $errmsg]</pre></blockquote>"
     ad_script_abort
     return
 }	
@@ -98,7 +98,7 @@ if {![regexp {<([^>]*)>\s*<([^>]*)>\s*<([^>]*)>} $update_xml match tag1 tag2 tag
 }
 
 # Check if the file was an error
-if {[string tolower $tag1] == "/table" || [string tolower $tag1] == "html" || [string tolower $tag2] == "html" || [string tolower $tag3] == "html"} {
+if {[string tolower $tag1] eq "/table" || [string tolower $tag1] eq "html" || [string tolower $tag2] eq "html" || [string tolower $tag3] eq "html"} {
     ad_return_complaint 1 "
 	Error while retreiving update information from URL<br>
 	'$service_url'.<br>
@@ -148,7 +148,7 @@ if {[string tolower $tag1] == "/table" || [string tolower $tag1] == "html" || [s
 set tree [xml_parse -persist $update_xml]
 set root_node [xml_doc_get_first_node $tree]
 set root_name [xml_node_get_name $root_node]
-if { ![string equal $root_name "po_software_update"] } {
+if { $root_name ne "po_software_update" } {
     ad_return_complaint 1 "Expected <po_software_update> as root node of update.xml file, found: '$root_name'"
 }
 
@@ -178,7 +178,7 @@ foreach root_node $root_nodes {
 	    set version_nodes [xml_node_get_children $root_node]
 	    foreach version_node $version_nodes {
 		set version_node_name [xml_node_get_name $version_node]
-		if { [string equal $version_node_name "update"] } {
+		if {$version_node_name eq "update"} {
 		    set package_name [apm_tag_value -default "" $version_node package_name]
 		    set package_url [apm_tag_value -default "" $version_node package_url]
 		    set po_version [apm_tag_value $version_node po_version]
@@ -197,10 +197,10 @@ foreach root_node $root_nodes {
 		    if {"" != $po_version_url} {set po_version_formatted "<a href=\"$po_version_url\">$po_version</a>" }
 		    # Skip this item if it's not "new"
 		    if {$show_only_new_p} {
-			if {![string equal $is_new "t"]} { continue }
+			if {$is_new != "t" } { continue }
 		    }
 		    append version_html "
-			<tr $bgcolor([expr $ctr % 2])>
+			<tr $bgcolor([expr {$ctr % 2}])>
 			  <td><a href=\"$update_url\" title=\"Update\" class=\"button\">Update</a>&nbsp;</td>
 			  <td>$package_formatted</td>
 			  <td><nobr>$po_version_formatted</nobr></td>

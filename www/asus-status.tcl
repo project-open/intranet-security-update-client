@@ -24,7 +24,7 @@ set po "&#93;project-open&#91;"
 set current_url [ns_conn url]
 set system_id [im_system_id]
 
-set current_user_id [ad_maybe_redirect_for_registration]
+set current_user_id [auth::require_login]
 db_0or1row user_info "
 	select	*
 	from	cc_users

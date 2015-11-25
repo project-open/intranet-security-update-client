@@ -16,7 +16,7 @@ ad_page_contract {
 # Defaults & Security
 # ------------------------------------------------------
 
-set user_id [ad_maybe_redirect_for_registration]
+set user_id [auth::require_login]
 
 # ------------------------------------------------------
 # Connect to server and check if there is a user_id for system_id
@@ -34,7 +34,7 @@ if { [catch {
 } errmsg] } {
     ad_return_complaint 1 "Error while accessing the URL '$service_base_url'.<br>
     Please check your URL. The following error was returned: <br>
-    <blockquote><pre>[ad_quotehtml $errmsg]</pre></blockquote>"
+    <blockquote><pre>[ns_quotehtml $errmsg]</pre></blockquote>"
     ad_script_abort
     return
 }
@@ -74,7 +74,7 @@ if {![regexp {<asus_reply>} $update_xml match]} {
 set tree [xml_parse -persist $update_xml]
 set root_node [xml_doc_get_first_node $tree]
 set root_name [xml_node_get_name $root_node]
-if { ![string equal $root_name "asus_reply"] } {
+if { $root_name ne "asus_reply" } {
     ad_return_complaint 1 "Expected &lt;asus_reply&gt; as root node of update.xml file, found: '$root_name'"
 }
 

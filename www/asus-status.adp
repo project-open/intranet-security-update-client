@@ -40,7 +40,7 @@
 <td><%= [lang::message::lookup "" intranet-security-update-client.Your_Email "Your<br>Email"] %></td>
 <td>@email@</td>
 <td>@user_account_status@</td>
-<td><a class="button" href="@create_account_url;noquote@">Create User Account</a>
+<td><a class="button" href="@create_account_url@">Create User Account</a>
 </tr>
 </if>
 
@@ -52,9 +52,9 @@
 <td>
 	Password<br>
 	<form action="@login_url;noquote@" method=GET>
-	<input type=hidden name=email value="@email;noquote@">
-	<input type=password name=password value="">
-	<input type=submit value="Login">
+	<input type="hidden" name="email" value="@email;noquote@">
+	<input type=password name="password" value="">
+	<input type="submit" value="Login">
 	</form>
 </td>
 </tr>
@@ -66,7 +66,7 @@
 <td><%= [lang::message::lookup "" intranet-security-update-client.Your_System "Your<br>SystemID"] %></td>
 <td>@system_id@</td>
 <td>@system_status@</td>
-<td><a class="button" href="@create_system_url;noquote@">Create System</a></td>
+<td><a class="button" href="@create_system_url@">Create System</a></td>
 </tr>
 
 <tr>

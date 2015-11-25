@@ -59,7 +59,7 @@ if { [catch {
 } errmsg] } {
     ad_return_complaint 1 "Error while accessing the URL '$currency_update_url'.<br>
 	Please check your URL. The following error was returned: <br>
-	<blockquote><pre>[ad_quotehtml $errmsg]</pre></blockquote>"
+	<blockquote><pre>[ns_quotehtml $errmsg]</pre></blockquote>"
     return
 }
 
@@ -96,7 +96,7 @@ if {![regexp {<([^>]*)>\s*<([^>]*)>} $update_xml match tag1 tag2]} {
     set update_xml ""
 }
 
-if {[string tolower $tag1] == "html" || [string tolower $tag2] == "html"} {
+if {[string tolower $tag1] eq "html" || [string tolower $tag2] eq "html"} {
     ns_write "
 	<li>
 		<font color=red>

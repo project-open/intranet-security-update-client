@@ -1,10 +1,10 @@
 <master src="../../intranet-core/www/admin/master">
-<property name="title">@page_title@</property>
+<property name="doc(title)">@page_title;literal@</property>
 <property name="main_navbar_label">admin</property>
 <property name="admin_navbar_label">software_updates</property>
 
-<table cellspacing=0 cellpadding=0 width="100%">
-<tr valign=top>
+<table cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
 <td>
 	<h1><nobr>@page_title@</nobr></h1>
 	<%= [lang::message::lookup "" intranet-security-update-client.Guide_Intro "
@@ -37,7 +37,7 @@
 
 
 <if @ctr@ ne 0>
-<table cellspacing=2 cellpadding=2 width="100%">
+<table cellspacing="2" cellpadding="2" width="100%">
 <tr class=rowtitle>
   <td class=rowtitle><%= [lang::message::lookup "" intranet-security-update-client.Update "Update"] %></td>
   <td class=rowtitle><%= [lang::message::lookup "" intranet-security-update-client.Package "Package"] %></td>

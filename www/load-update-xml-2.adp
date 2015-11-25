@@ -1,5 +1,5 @@
 <master src="../../intranet-core/www/master">
-<property name="title">@page_title@</property>
+<property name="doc(title)">@page_title;literal@</property>
 <property name="main_navbar_label">admin</property>
 
 
@@ -10,7 +10,7 @@ The <span class=brandsec>]</span><span class=brandfirst>project-open</span><span
 server responded:
 </p>
 
-<table cellspacing=1 cellpadding=1>
+<table cellspacing="1" cellpadding="1">
 <tr class=rowtitle>
   <td class=rowtitle>Field</td>
   <td class=rowtitle>Value</td>
@@ -32,7 +32,7 @@ the <a href="index">instructions</a>.<br>
 <li>You need to perform a complete backup before each and every update.
 </ul>
 
-<table cellspacing=2 cellpadding=2>
+<table cellspacing="2" cellpadding="2">
 <tr class=rowtitle>
   <td class=rowtitle align=middle>Update</td>
   <td class=rowtitle align=middle>Package</td>

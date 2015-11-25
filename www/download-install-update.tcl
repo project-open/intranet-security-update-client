@@ -36,10 +36,10 @@ switch $platform {
 
 # The file name is the last piece of the URL
 set url_pieces [split $url "/"]
-set file_name [lindex $url_pieces [expr [llength $url_pieces]-1]]
+set file_name [lindex $url_pieces [llength $url_pieces]-1]
 
 set file_pieces [split $file_name "."]
-set file_ext [string tolower [lindex $file_pieces [expr [llength $file_pieces]-1]]]
+set file_ext [string tolower [lindex $file_pieces [llength $file_pieces]-1]]
 set filename "$file_path/$file_name"
 
 if {"tgz" != $file_ext} {
@@ -75,7 +75,7 @@ if {[catch {
     ns_write "
 	<li><b>Error deleting file '$filename'</b>:<br>
 	Please check your url or your file system.<br>
-	<pre>[ad_quotehtml $err_msg]</pre>
+	<pre>[ns_quotehtml $err_msg]</pre>
     "
     ns_write "</ul>[im_footer]\n"
     ad_script_abort
@@ -100,7 +100,7 @@ if {[catch {
     ns_write "
 	<li><b>Unable to load url '$file_url' into file '$filename'</b>:<br>
 	Commend to execute:<br><pre>exec /usr/bin/wget -q -O $filename $file_url</pre><br>
-	Error message:<br><pre>[ad_quotehtml $err_msg]</pre>
+	Error message:<br><pre>[ns_quotehtml $err_msg]</pre>
     "
     ns_write "</ul>[im_footer]\n"
     ad_script_abort
@@ -119,7 +119,7 @@ if {[catch { exec $gzip_cmd --test $filename } gzip_err]} {
 	<li><b>Invalid format of '$filename'</b>:<br>
 	The file '$filename' is not a valid 'gzip' file.<br>
 	Here is the original error message:
-	<pre>[ad_quotehtml $gzip_err]</pre>
+	<pre>[ns_quotehtml $gzip_err]</pre>
     "
     ns_write "</ul>[im_footer]\n"
     ad_script_abort
@@ -140,7 +140,7 @@ if {[catch { set file_list [exec $tar_cmd tzf $filename] } tar_err]} {
 	<li><b>Error unpacking '$filename'</b>:<br>
 	The file '$filename' is not a valid 'tgz' file.<br>
 	Here is the original error message:
-	<pre>[ad_quotehtml $tar_err]</pre>
+	<pre>[ns_quotehtml $tar_err]</pre>
     "
     ns_write "</ul>[im_footer]\n"
     ad_script_abort
@@ -211,7 +211,7 @@ if {[catch { set tar_output [exec $tar_cmd --directory $file_path -x -z -f $file
     ns_write "
 	<li><b>Error unpacking '$filename'</b>:<br>
 	Here is the original error message:
-	<pre>[ad_quotehtml $tar_err]</pre>
+	<pre>[ns_quotehtml $tar_err]</pre>
     "
     ns_write "</ul>[im_footer]\n"
     ad_script_abort

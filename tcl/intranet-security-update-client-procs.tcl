@@ -44,7 +44,7 @@ ad_proc -public im_security_update_exchange_rate_sweeper { } {
 	return
     }
 
-    set days_since_update [expr $now_julian - $last_update_julian]
+    set days_since_update [expr {$now_julian - $last_update_julian}]
     ns_log Notice "im_security_update_exchange_rate_sweeper: days_since_update=$days_since_update, max_days_since_update=$max_days_since_update"
     if {$days_since_update > $max_days_since_update} {
 
@@ -114,7 +114,7 @@ ad_proc im_security_update_update_currencies {
     set tree [xml_parse -persist $update_xml]
     set root_node [xml_doc_get_first_node $tree]
     set root_name [xml_node_get_name $root_node]
-    if {![string equal $root_name "asus_reply"] } {
+    if {$root_name ne "asus_reply" } {
 	append html "Expected &lt;asus_reply&gt; as root node of update.xml file, found: '$root_name'"
 	return $html
     }
@@ -511,7 +511,7 @@ ad_proc im_security_update_client_component { } {
     Passes on the version numbers of all installed packages
     in order to be able to retreive relevant messages
 } {
-    set current_user_id [ad_maybe_redirect_for_registration]
+    set current_user_id [auth::require_login]
     set action_url "/intranet-security-update-client/update-preferences"
     set return_url [ad_conn url]
 
@@ -687,7 +687,7 @@ ad_proc im_security_update_connected_email {
     } errmsg] } {
 	ad_return_complaint 1 "Error while accessing the URL '$service_base_url'.<br>
     Please check your URL. The following error was returned: <br>
-    <blockquote><pre>[ad_quotehtml $errmsg]</pre></blockquote>"
+    <blockquote><pre>[ns_quotehtml $errmsg]</pre></blockquote>"
 	ad_script_abort
 	return
     }
@@ -724,7 +724,7 @@ ad_proc im_security_update_connected_email {
     set tree [xml_parse -persist $update_xml]
     set root_node [xml_doc_get_first_node $tree]
     set root_name [xml_node_get_name $root_node]
-    if { ![string equal $root_name "asus_reply"] } {
+    if { $root_name ne "asus_reply" } {
 	ad_return_complaint 1 "Expected &lt;asus_reply&gt; as root node of update.xml file, found: '$root_name'"
     }
     
@@ -760,7 +760,7 @@ ad_proc im_security_update_backup_component {
     } errmsg] } {
 	ad_return_complaint 1 "Error while accessing the URL '$service_base_url'.<br>
     Please check your URL. The following error was returned: <br>
-    <blockquote><pre>[ad_quotehtml $errmsg]</pre></blockquote>"
+    <blockquote><pre>[ns_quotehtml $errmsg]</pre></blockquote>"
 	ad_script_abort
 	return
     }
@@ -798,7 +798,7 @@ ad_proc im_security_update_backup_component {
     set tree [xml_parse -persist $update_xml]
     set root_node [xml_doc_get_first_node $tree]
     set root_name [xml_node_get_name $root_node]
-    if {![string equal $root_name "asus_reply"] } {
+    if {$root_name ne "asus_reply" } {
 	append html "Expected &lt;asus_reply&gt; as root node of update.xml file, found: '$root_name'"
 	return $html
     }
