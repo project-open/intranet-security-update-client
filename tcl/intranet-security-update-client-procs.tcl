@@ -748,6 +748,10 @@ ad_proc im_security_update_backup_component {
     Retreive the list of backup files on Projop and generate
     a list of these files.
 } {
+
+    # fraber 151209 - disabled
+    return ""
+
     set system_id [im_system_id]
     set service_base_url "http://www.project-open.net/intranet-asus-server/backup-files.xml"
     set full_url [export_vars -base $service_base_url {system_id}]
