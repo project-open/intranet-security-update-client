@@ -40,7 +40,7 @@ Automatic Software Update service is not free.<br>
 Please read the
 <a href="http://www.project-open.com/en/services/">
 service description</a> and 
-<a href="http://www.project-open.com/contact/">contact us</a>
+<a href="http://www.project-open.com/en/contact">contact us</a>
 in order to get access <br>
 to the service.
 </p>
