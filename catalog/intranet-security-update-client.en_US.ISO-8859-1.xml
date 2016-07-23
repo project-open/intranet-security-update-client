@@ -2,5 +2,6 @@
 <message_catalog package_key="intranet-security-update-client" locale="en_US" charset="ISO-8859-1">
 
   <msg key="Security_Updates">Security Updates</msg>
+  <msg key="Software_Updates">Software Updates</msg>
   <msg key="Your_browser_cant_display_iframes">Your browser is not capable of displaying IFrames</msg>
 </message_catalog>
