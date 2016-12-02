@@ -19,7 +19,7 @@ ad_library {
 # There should be only one thread indexing files at a time...
 nsv_set intranet_security_update_client sweeper_p 0
 
-# Check for changed files every X minutes
+# Check for exchange rates every X minutes
 set enabled_p [parameter::get_from_package_key -package_key intranet-security-update-client -parameter ExchangeRateSweeperEnabledP -default 0]
 ns_log Notice "intranet-security-update-client-init: enabled_p = $enabled_p"
 if {$enabled_p} {
