@@ -205,7 +205,7 @@ foreach root_node $root_nodes {
 			  <td>$package_formatted</td>
 			  <td><nobr>$po_version_formatted</nobr></td>
 			  <td><nobr>$release_date</nobr></td>
-			  <td><a href=\"$forum_url\">$forum_title</a></td>
+			  <td><a href=\"$forum_url\" target=\"_\">$forum_title</a></td>
 			  <td>$update_urgency</td>
 			  <td>$whats_new</td>
 			</tr>
