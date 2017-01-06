@@ -191,6 +191,7 @@ foreach root_node $root_nodes {
 		    set forum_url [apm_tag_value -default "" $version_node forum_url]
 		    set forum_title [apm_tag_value -default "" $version_node forum_title]
 		    set update_url [export_vars -base "/intranet-security-update-client/download-install-update" {{url $download_url}}]
+		    if {"" eq $download_url} { set update_url "" }
 		    set package_formatted $package_name
 		    if {"" != $package_url} {set package_formatted "<a href=\"$package_url\">$package_name</a>" }
 		    set po_version_formatted $po_version
@@ -199,9 +200,14 @@ foreach root_node $root_nodes {
 		    if {$show_only_new_p} {
 			if {$is_new != "t" } { continue }
 		    }
+
+		    set update_html "Not available"
+		    if {"" ne $update_url} {
+			set update_html "<a href=\"$update_url\" title=\"Update\" class=\"button\">Update</a>"
+		    }
 		    append version_html "
 			<tr $bgcolor([expr {$ctr % 2}])>
-			  <td><a href=\"$update_url\" title=\"Update\" class=\"button\">Update</a>&nbsp;</td>
+			  <td>$update_html &nbsp;</td>
 			  <td>$package_formatted</td>
 			  <td><nobr>$po_version_formatted</nobr></td>
 			  <td><nobr>$release_date</nobr></td>
