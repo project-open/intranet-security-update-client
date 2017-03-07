@@ -1,4 +1,4 @@
-# /tcl/intranet-security-update-client-procs.tcl
+# /intranet-security-update-client/tcl/intranet-exchange-rate-procs.tcl
 #
 # Copyright (C) 2003 - 2009 ]project-open[
 #
