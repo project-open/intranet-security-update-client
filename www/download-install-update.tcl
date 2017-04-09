@@ -85,18 +85,15 @@ if {[catch {
 ns_write "
 	<li>Downloading <a href=\"$url\">$url</a><br>
 	into $filename<br><br>
-	using command: <pre></pre>exec /usr/bin/wget -q -O $filename $file_url<br>
+	using command: <pre></pre>im_exec wget -q -O $filename $file_url<br>
 	<li>This may take several seconds or minutes, depending on your Network connection, so please be patient...
 "
 
 set file_size 0
 if {[catch {
-
     # Use wget for HTTP download, allowing to follow redirects in SourceForge.
-    exec /usr/bin/wget -q -O $filename $file_url
-
+    im_exec wget -q -O $filename $file_url
 } err_msg] } {
-
     ns_write "
 	<li><b>Unable to load url '$file_url' into file '$filename'</b>:<br>
 	Commend to execute:<br><pre>exec /usr/bin/wget -q -O $filename $file_url</pre><br>
@@ -114,7 +111,7 @@ ns_write "<li>Download complete.<pre>$err_msg</pre>\n"
 # -------------------------------------------------------
 
 set gzip_cmd [parameter::get -package_id [im_package_core_id] -parameter "GzipCmd" -default "/usr/bin/gzip"]
-if {[catch { exec $gzip_cmd --test $filename } gzip_err]} {
+if {[catch { im_exec $gzip_cmd --test $filename } gzip_err]} {
     ns_write "
 	<li><b>Invalid format of '$filename'</b>:<br>
 	The file '$filename' is not a valid 'gzip' file.<br>
@@ -135,7 +132,7 @@ if {[catch { exec $gzip_cmd --test $filename } gzip_err]} {
 
 set tar_cmd [parameter::get -package_id [im_package_core_id] -parameter "TarCmd" -default "/bin/tar"]
 set file_list ""
-if {[catch { set file_list [exec $tar_cmd tzf $filename] } tar_err]} {
+if {[catch { set file_list [im_exec $tar_cmd tzf $filename] } tar_err]} {
     ns_write "
 	<li><b>Error unpacking '$filename'</b>:<br>
 	The file '$filename' is not a valid 'tgz' file.<br>
@@ -207,7 +204,7 @@ ns_write "<li>Extracting files into file system...\n"
 
 
 set tar_output ""
-if {[catch { set tar_output [exec $tar_cmd --directory $file_path -x -z -f $filename] } tar_err]} {
+if {[catch { set tar_output [im_exec $tar_cmd --directory $file_path -x -z -f $filename] } tar_err]} {
     ns_write "
 	<li><b>Error unpacking '$filename'</b>:<br>
 	Here is the original error message:

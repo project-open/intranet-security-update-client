@@ -254,7 +254,7 @@ ad_proc im_security_update_client_component { } {
 
     # Load Average
     if {[catch {
-	set load_avg [exec bash -c "cat /proc/loadavg"]
+	set load_avg [im_exec bash -c "cat /proc/loadavg"]
     } err_msg]} {
 	global errorInfo
         ns_log Error "Error evaluating Load Average - $errorInfo"
