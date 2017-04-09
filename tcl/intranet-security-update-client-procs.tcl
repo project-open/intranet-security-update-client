@@ -349,17 +349,32 @@ ad_proc im_security_update_client_component { } {
     }
 
     # Check for upgrades to run
-    set upgrade_message "Server Information: <ul><li> &#93project-open&#91; version: [im_core_version]</li><li>Platform: $os_platform</li><li>OS Version: $os_version</li><li>Script version: $tcl_version</li>"
-    append upgrade_message "<li>Web Server version: $aol_version</li><li>System Id: [im_system_id]</li><li>Load Average: $load_avg</li></ul><br><br>"
+    set upgrade_message "Server Information: 
+    <ul>
+	<li> &#93project-open&#91; version: [im_core_version]</li>
+	<li>Platform: $os_platform</li>
+	<li>OS Version: $os_version</li>
+	<li>TCL version: $tcl_version</li>
+	<li>Web Server version: $aol_version</li>
+	<li>System Id: [im_system_id]</li>
+	<li>Load Average: $load_avg</li>
+    </ul><br><br>"
     set script_list [im_check_for_update_scripts]
     append upgrade_message $script_list
     if {"" != $script_list} { append upgrade_message "<br>&nbsp;<br>\n" }
 
     set sec_html "
+	<table><tr><td width=250>
 	$upgrade_message
+
+	</td><td width=400>
+
+
 	<iframe src=\"$sec_url\" width=\"90%\" height=\"200\" name=\"$security_update_l10n\">
 	  <p>$no_iframes_l10n</p>
 	</iframe>
+
+
 	<form action=\"$action_url\" method=POST>
 	    <input type=\"radio\" name=\"verbosity\" value=\"1\" $verbose_selected>Detailed
 	    [im_gif -translate_p 1 help "Choose this option for detailed security information. With this option the security update service transmits information about your configuration that might help us to assess your &#93project-open&#91; system configuration including package versions and operating system version information. It also includes your email address so that we can alert your in special situations."]
@@ -368,6 +383,8 @@ ad_proc im_security_update_client_component { } {
 	    <input type=\"hidden\" name=\"return_url\" value=\"$return_url\">
 	    <input type=\"submit\" name=\"submit\" value=\"OK\">
 	</form>
+
+        </td></tr></table>
     "
 
     return $sec_html
