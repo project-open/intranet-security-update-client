@@ -47,8 +47,6 @@ set system_id [im_system_id]
 set service_url "http://www.project-open.net/intranet-asus-server/update-list"
 set full_url [export_vars -base $service_url {system_id core_version}]
 
-
-
 # ------------------------------------------------------------
 # Fetch the update.xml file from the remote server
 # ------------------------------------------------------------
@@ -57,39 +55,56 @@ set update_xml ""
 set error_msg ""
 set login_status "error"
 
+set httpget_timeout 2
+set httpget_max_redirection 1
 if { [catch {
-    set update_xml [ns_httpget $full_url]
+    set update_xml [ns_httpget $full_url $httpget_timeout $httpget_max_redirection]
 } errmsg] } {
-    ad_return_complaint 1 "Error while accessing the URL '$service_url'.<br>
+    set msg "Error while accessing the URL '$service_url'.<br>
     Please check your URL. The following error was returned: <br>
     <blockquote><pre>[ns_quotehtml $errmsg]</pre></blockquote>"
+
+    if {$show_master_p} {
+	ad_return_complaint 1 $msg
+    } else {
+	doc_return 200 "text/html" "<html><body>$msg</body></html>"
+    }
     ad_script_abort
-    return
 }	
 
 # Check for empty update
 if {"" == $update_xml} {
-    ad_return_complaint 1 "Found an empty XML file accessing the URL '$service_url'.<br>
+    set msg  "Found an empty XML file accessing the URL '$service_url'.<br>
     This means that your server(!) was not able to access the URL.<br>
     Please check the the Internet and firewall configuration of your
     server and verify that the 'nsd' (Linux) or 'nsd4' (Windows) 
-    process has access to the URL.<br>"
+    process has access to the URL."
+
+    if {$show_master_p} {
+	ad_return_complaint 1 $msg
+    } else {
+	doc_return 200 "text/html" "<html><body>$msg</body></html>"
+    }
     ad_script_abort
-    return
 }	
 
 # Check whether it's a HTML or an XML
 if {![regexp {<([^>]*)>\s*<([^>]*)>\s*<([^>]*)>} $update_xml match tag1 tag2 tag3]} {
-    ad_return_complaint 1 "Error while retreiving update information from
+    set msg "Error while retreiving update information from
     URL '$service_url'.<br>The retreived files doesn't seem to be a XML or HTML file:<br>
     <pre>$update_xml</pre>"
+
+    if {$show_master_p} {
+	ad_return_complaint 1 $msg
+    } else {
+	doc_return 200 "text/html" "<html><body>$msg</body></html>"
+    }    
     ad_script_abort
-    return
 }
 
 # Check if the file was an error
 if {[string tolower $tag1] eq "/table" || [string tolower $tag1] eq "html" || [string tolower $tag2] eq "html" || [string tolower $tag3] eq "html"} {
-    ad_return_complaint 1 "
+    set msg "
 	Error while retreiving update information from URL<br>
 	'$service_url'.<br>
 	The retreived result seems to be a HTML document and not an XML document.<br>
@@ -100,8 +115,13 @@ if {[string tolower $tag1] eq "/table" || [string tolower $tag1] eq "html" || [s
 	<br>&nbsp;</br>
 	<pre>$update_xml</pre>
     "
+
+    if {$show_master_p} {
+	ad_return_complaint 1 $msg
+    } else {
+	doc_return 200 "text/html" "<html><body>$msg</body></html>"
+    }    
     ad_script_abort
-    return
 }
 
 # ------------------------------------------------------------
@@ -135,11 +155,32 @@ if {[string tolower $tag1] eq "/table" || [string tolower $tag1] eq "html" || [s
 #   </update>
 # </update_list>
 
-set tree [xml_parse -persist $update_xml]
-set root_node [xml_doc_get_first_node $tree]
-set root_name [xml_node_get_name $root_node]
+
+if { [catch {
+    set tree [xml_parse -persist $update_xml]
+    set root_node [xml_doc_get_first_node $tree]
+    set root_name [xml_node_get_name $root_node]    
+} errmsg] } {
+    set msg "Error parsing update information at '$service_url'.<br>
+    Please check your URL. The following error was returned: <br>
+    <blockquote><pre>[ns_quotehtml $errmsg]</pre></blockquote>"
+    if {$show_master_p} {
+	ad_return_complaint 1 $msg
+    } else {
+	doc_return 200 "text/html" "<html><body>$msg</body></html>"
+    }
+    ad_script_abort
+}	
+
+
 if { $root_name ne "po_software_update" } {
-    ad_return_complaint 1 "Expected <po_software_update> as root node of update.xml file, found: '$root_name'"
+    set msg "Expected <po_software_update> as root node of update.xml file, found: '$root_name'"
+    if {$show_master_p} {
+	ad_return_complaint 1 $msg
+    } else {
+	doc_return 200 "text/html" "<html><body>$msg</body></html>"
+    }    
+    ad_script_abort
 }
 
 set ctr 0
