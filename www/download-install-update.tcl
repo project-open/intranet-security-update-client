@@ -200,7 +200,11 @@ if {"" != $invalid_file} {
 # -------------------------------------------------------
 
 
-ns_write "<li>Extracting files into file system...\n"
+ns_write "
+</ul>
+<h2>Extracting files into file system</h2>
+<ul>
+"
 
 
 set tar_output ""
