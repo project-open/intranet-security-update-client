@@ -12,6 +12,8 @@ ad_page_contract {
     @creation-date Apr 2005
 } {
     { show_only_new_p 1 }
+    { show_master_p 1 }
+    { show_help_p 1 }
 }
 
 set user_id [auth::require_login]
@@ -36,23 +38,11 @@ set po_wiki "http://www.project-open.com/en"
 set asus_verbosity [im_security_update_asus_status]
 
 
-
 # ------------------------------------------------------------
 # Determine the version of the intranet-core package
 # ------------------------------------------------------------
 
-set core_versions [db_list core_versions "
-        select version_name
-        from apm_package_versions
-        where version_id in (
-                select max(version_id)
-                from apm_package_versions
-                where package_key = 'intranet-core'
-        )
-"]
-set core_version [lindex $core_versions 0]
-
-
+set core_version [im_core_version]
 set system_id [im_system_id]
 set service_url "http://www.project-open.net/intranet-asus-server/update-list"
 set full_url [export_vars -base $service_url {system_id core_version}]
@@ -193,9 +183,9 @@ foreach root_node $root_nodes {
 		    set update_url [export_vars -base "/intranet-security-update-client/download-install-update" {{url $download_url}}]
 		    if {"" eq $download_url} { set update_url "" }
 		    set package_formatted $package_name
-		    if {"" != $package_url} {set package_formatted "<a href=\"$package_url\">$package_name</a>" }
+		    if {"" != $package_url} {set package_formatted "<a href=\"$package_url\" target=\"_parent\">$package_name</a>" }
 		    set po_version_formatted $po_version
-		    if {"" != $po_version_url} {set po_version_formatted "<a href=\"$po_version_url\">$po_version</a>" }
+		    if {"" != $po_version_url} {set po_version_formatted "<a href=\"$po_version_url\" target=\"_parent\">$po_version</a>" }
 		    # Skip this item if it's not "new"
 		    if {$show_only_new_p} {
 			if {$is_new != "t" } { continue }
@@ -203,7 +193,7 @@ foreach root_node $root_nodes {
 
 		    set update_html "Not available"
 		    if {"" ne $update_url} {
-			set update_html "<a href=\"$update_url\" title=\"Update\" class=\"button\">Update</a>"
+			set update_html "<a href=\"$update_url\" title=\"Update\" class=\"button\" target=\"_parent\">Update</a>"
 		    }
 		    append version_html "
 			<tr $bgcolor([expr {$ctr % 2}])>
@@ -211,9 +201,15 @@ foreach root_node $root_nodes {
 			  <td>$package_formatted</td>
 			  <td><nobr>$po_version_formatted</nobr></td>
 			  <td><nobr>$release_date</nobr></td>
-			  <td><a href=\"$forum_url\" target=\"_\">$forum_title</a></td>
+			  <td><a href=\"$forum_url\" target=\"_parent\">$forum_title</a></td>
+                    "
+		    if {$show_help_p} {
+			append version_html "
 			  <td>$update_urgency</td>
-			  <td>$whats_new</td>
+                          <td>$whats_new</td>
+                        "
+		    }
+		    append version_html "
 			</tr>
 		    "
 		    incr ctr
