@@ -67,10 +67,12 @@ ad_proc im_security_update_package_look_up_table { } {
 	contacts			bl
 	diagram				bm
 	ecommerce			bn
+	edit-this-page			bs
 	events				bo
 	faq				bq
 	file-storage			fd
 	general-comments		br
+	intranet-agile			fs
 	intranet-amberjack		ca
 	intranet-asus-server		fe
 	intranet-audit			cb
@@ -79,62 +81,90 @@ ad_proc im_security_update_package_look_up_table { } {
 	intranet-bug-tracker		cd
 	intranet-calendar		ce
 	intranet-calendar-holidays	cf
+	intranet-checklist		ft
 	intranet-confdb			cg
 	intranet-contacts		ch
 	intranet-core			ci
 	intranet-cost			cj
 	intranet-cost-center		ck
+	intranet-crm-opportunities	fu
 	intranet-crm-tracking		cl
+	intranet-cvs-import		fv
 	intranet-cust-baselkb		cm
 	intranet-cust-cambridge		cn
 	intranet-cust-issa		co
 	intranet-cust-lexcelera		cp
 	intranet-cust-projop		cq
 	intranet-cust-reinisch		cr
-	intranet-cust-versia		fg	
+	intranet-cust-versia		fg
 	intranet-cvs-integration	cs
+	intranet-demo-data		fw
+	intranet-department-planner	fx
 	intranet-dw-light		ct
 	intranet-dynfield		cu
+	intranet-earned-value-management fy
+	intranet-employee-evaluation	fz
+	intranet-estimate-to-complete	ga
+	intranet-events			gb
 	intranet-exchange-rate		cv
 	intranet-expenses		cw
 	intranet-expenses-workflow	cx
 	intranet-filestorage		cy
+	intranet-filestorage-size-indicator gc
 	intranet-forum			cz
 	intranet-freelance		da
 	intranet-freelance-invoices	db
 	intranet-freelance-rfqs		dc
 	intranet-freelance-translation	dd
 	intranet-funambol		fh
+	intranet-gantt-editor		gd
 	intranet-ganttproject		de
 	intranet-gtd-dashboard		fi
 	intranet-helpdesk		df
+	intranet-horizontal-scaling	ge
 	intranet-hr			dg
+	intranet-hr-hourly-rates	gf
+	intranet-html2pdf		gh
+	intranet-icinga2		gi
+	intranet-idea-management	gj
 	intranet-invoices		dh
 	intranet-invoices-templates	di
+	intranet-jira			gk
 	intranet-mail-import		dj
 	intranet-material		dk
 	intranet-milestone		dl
+	intranet-mylyn			gl
 	intranet-nagios			dm
+	intranet-navision		gm
 	intranet-notes			dn
 	intranet-notes-tutorial		do
+	intranet-openoffice		gn
 	intranet-ophelia		dp
 	intranet-otp			dq
+	intranet-otrs-integration	go
+	intranet-overtime		gp
 	intranet-payments		dr
 	intranet-pdf-htmldoc		ds
 	intranet-planning		fj
 	intranet-portfolio-management	fk
+	intranet-portfolio-planner	gq
+	intranet-procedures		gr
+	intranet-project-reminders	gs
+	intranet-project-scoring	gt
 	intranet-release-mgmt		dt
 	intranet-reporting		du
 	intranet-reporting-cubes	dv
 	intranet-reporting-dashboard	dw
 	intranet-reporting-finance	dx
 	intranet-reporting-indicators	dy
+	intranet-reporting-openoffice	gu
 	intranet-reporting-translation	dz
 	intranet-reporting-tutorial	ea
 	intranet-resource-management	fl
 	intranet-rest			fm
 	intranet-riskmanagement		eb
 	intranet-rss-reader		fn
+	intranet-rule-engine		gv
 	intranet-scrum			fo
 	intranet-search-pg		ec
 	intranet-search-pg-files	ed
@@ -142,25 +172,33 @@ ad_proc im_security_update_package_look_up_table { } {
 	intranet-security-update-server	ef
 	intranet-sharepoint		fp
 	intranet-simple-survey		eg
+	intranet-slack			gw
 	intranet-sla-management		fq
 	intranet-soap-lite-server	eh
 	intranet-spam			ei
 	intranet-sql-selectors		ej
+	intranet-sugarcrm		gx
 	intranet-sysconfig		ek
+	intranet-task-management	gy
 	intranet-timesheet2		el
+	intranet-timesheet2-interval	gz
 	intranet-timesheet2-invoices	em
 	intranet-timesheet2-task-popup	en
 	intranet-timesheet2-tasks	eo
 	intranet-timesheet2-workflow	ep
+	intranet-timesheet-reminders	ha
 	intranet-tinytm			eq
+	intranet-touch-timesheet	hb
 	intranet-trans-invoice-authorization	fr
 	intranet-trans-invoices		er
+	intranet-trans-project-feedback	hc
 	intranet-trans-project-wizard	et
 	intranet-trans-quality		eu
 	intranet-translation		es
 	intranet-ubl			ev
 	intranet-update-client		ew
 	intranet-update-server		ex
+	intranet-wall			hd
 	intranet-wiki			ey
 	intranet-workflow		ez
 	intranet-xmlrpc			fa
@@ -173,6 +211,8 @@ ad_proc im_security_update_package_look_up_table { } {
 	oryx-ts-extensions		xe
 	postal-address			xf
 	ref-countries			xg
+	ref-currency			xy
+	ref-itu				xz
 	ref-language			xh
 	ref-timezones			xi
 	ref-us-counties			xj
@@ -180,13 +220,33 @@ ad_proc im_security_update_package_look_up_table { } {
 	ref-us-zipcodes			xl
 	rss-support			xm
 	search				xn
+	sencha-core			ya
+	sencha-extjs-v421		yb
+	sencha-extjs-v421-dev		yc
+	sencha-filestorage		yd
+	sencha-member-portlet		ye
+	sencha-reporting-portfolio	yf
+	sencha-task-editor		yg
+	senchatouch-notes		yh
+	senchatouch-timesheet		yi
+	senchatouch-v242		yj
 	simple-survey			xo
 	telecom-number			xp
 	trackback			xq
+	tsearch2-driver			yk
+	upgrade-3.0-3.1			za
+	upgrade-3.1-3.2			zb
+	upgrade-3.2-3.3			zc
+	upgrade-3.3-3.4			zd
+	upgrade-3.4-3.5			ze
+	upgrade-3.5-4.0			zf
+	upgrade-4.0-4.1			zg
+	upgrade-4.1-5.0			zh
 	wiki				xr
 	workflow			xs
 	xml-rpc				xt
 	xotcl-core			xw
+	xotcl-request-monitor		yk
 	xowiki				xx
     }
     return $lut_list
@@ -337,8 +397,11 @@ ad_proc im_security_update_client_component { } {
     append sec_url "sid=[im_system_id]&"
     append sec_url "hid=[im_hardware_id]"
 
-    set security_update_l10n [lang::message::lookup "" intranet-security-update-client.Security_Updates "ASUS Security Updates"]
+    set security_update_l10n [lang::message::lookup "" intranet-security-update-client.Release_Status_Information "Release Status Information"]
     set no_iframes_l10n [lang::message::lookup "" intranet-security-update-client.Your_browser_cant_display_iframes "Your browser can't display IFrames. Please click for here for <a href=\"$sec_url_base\">security update messages</a>."]
+
+    set asus_url [export_vars -base "/intranet-security-update-client/retreive-update-list" {{show_master_p 0} {show_help_p 0}}]
+    set asus_l10n [lang::message::lookup "" intranet-security-update-client.Security_Updates "ASUS Security Updates"]
 
     set anonymous_selected ""
     set verbose_selected ""
@@ -364,16 +427,16 @@ ad_proc im_security_update_client_component { } {
     if {"" != $script_list} { append upgrade_message "<br>&nbsp;<br>\n" }
 
     set sec_html "
-	<table><tr><td width=250>
-	$upgrade_message
+	<table width=600>
+        <tr valign=top>
+        <td width=300>
+	    $upgrade_message
+ 	</td>
+        <td width=300 valign=top>
 
-	</td><td width=400>
-
-
-	<iframe src=\"$sec_url\" width=\"90%\" height=\"200\" name=\"$security_update_l10n\">
-	  <p>$no_iframes_l10n</p>
-	</iframe>
-
+		<iframe src=\"$sec_url\" width=\"100%\" height=\"130\" frameBorder=0 name=\"$security_update_l10n\">
+		  <p>$no_iframes_l10n</p>
+		</iframe>
 
 	<form action=\"$action_url\" method=POST>
 	    <input type=\"radio\" name=\"verbosity\" value=\"1\" $verbose_selected>Detailed
@@ -384,7 +447,16 @@ ad_proc im_security_update_client_component { } {
 	    <input type=\"submit\" name=\"submit\" value=\"OK\">
 	</form>
 
-        </td></tr></table>
+        </td>
+	</tr>
+	<tr><td colspan=2 width=500>
+
+		<iframe src=\"$asus_url\" width=\"100%\" height=\"100\" frameBorder=0 name=\"$asus_l10n\">
+		  <p>$no_iframes_l10n</p>
+		</iframe>
+
+	</td></tr>
+	</table>
     "
 
     return $sec_html
