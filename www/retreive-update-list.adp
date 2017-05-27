@@ -85,7 +85,7 @@
 <p>&nbsp;</p>
 </if>
 <else>
-<li><b><%= [lang::message::lookup "" intranet-security-update-client.Guide_Error_Retreiving_Update_List "Error retreiving the list of available updates"] %></b>:<br>
+<li><b><%= [lang::message::lookup "" intranet-security-update-client.No_Updates_Available "No updates available for your version"] %></b>:<br>
 </else>
 
 <if 1 eq @show_help_p@>
@@ -110,3 +110,5 @@
 </ol>
 
 </if>
+
+<!-- @full_url;noquote@ -->
