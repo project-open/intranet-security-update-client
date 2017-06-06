@@ -412,7 +412,7 @@ ad_proc im_security_update_client_component { } {
     }
 
     # Check for upgrades to run
-    set upgrade_message "Server Information: 
+    set server_information "Server Information: 
     <ul>
 	<li> &#93project-open&#91; version: [im_core_version]</li>
 	<li>Platform: $os_platform</li>
@@ -423,16 +423,14 @@ ad_proc im_security_update_client_component { } {
 	<li>Load Average: $load_avg</li>
     </ul><br><br>"
     set script_list [im_check_for_update_scripts]
-    append upgrade_message $script_list
-    if {"" != $script_list} { append upgrade_message "<br>&nbsp;<br>\n" }
 
     set sec_html "
-	<table width=600>
+	<table width='600'>
         <tr valign=top>
-        <td width=300>
-	    $upgrade_message
+	<td width=50%'>
+		$server_information
  	</td>
-        <td width=300 valign=top>
+        <td width='50%' valign=top>
 
 		<iframe src=\"$sec_url\" width=\"100%\" height=\"130\" frameBorder=0 name=\"$security_update_l10n\">
 		  <p>$no_iframes_l10n</p>
@@ -449,6 +447,11 @@ ad_proc im_security_update_client_component { } {
 
         </td>
 	</tr>
+
+        <tr><td colspan=2> 
+		$script_list 
+	</td></tr>
+
 	<tr><td colspan=2 width=500>
 
 		<iframe src=\"$asus_url\" width=\"100%\" height=\"100\" frameBorder=0 name=\"$asus_l10n\">
