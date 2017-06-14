@@ -58,7 +58,7 @@ set login_status "error"
 set httpget_timeout 2
 set httpget_max_redirection 1
 if { [catch {
-    set update_xml [ns_httpget $full_url $httpget_timeout $httpget_max_redirection]
+    set update_xml [im_httpget $full_url $httpget_timeout $httpget_max_redirection]
 } errmsg] } {
     set msg "Error while accessing the URL '$service_url'.<br>
     Please check your URL. The following error was returned: <br>

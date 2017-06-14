@@ -37,7 +37,7 @@ ad_proc im_security_update_backup_component {
     set login_status "error"
     
     if { [catch {
-	set update_xml [ns_httpget $full_url]
+	set update_xml [im_httpget $full_url]
     } errmsg] } {
 	ad_return_complaint 1 "Error while accessing the URL '$service_base_url'.<br>
     Please check your URL. The following error was returned: <br>

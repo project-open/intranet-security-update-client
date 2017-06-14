@@ -52,7 +52,7 @@ ad_proc -public im_security_update_exchange_rate_sweeper { } {
 	ns_log Notice "im_security_update_exchange_rate_sweeper: Updating ..."
 
 	if { [catch {
-	    set update_xml [ns_httpget $currency_update_url]
+	    set update_xml [im_httpget $currency_update_url]
 	} err_msg] } {
 	    ns_log Error "im_security_update_exchange_rate_sweeper: Error retreiving file: $err_msg"
 	    db_string log "select acs_log__debug('im_security_update_exchange_rate_sweeper', 'Error retreiving currency file: [ns_quotehtml $err_msg].')"
