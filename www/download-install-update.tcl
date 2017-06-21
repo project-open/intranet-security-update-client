@@ -96,7 +96,7 @@ if {[catch {
 } err_msg] } {
     ns_write "
 	<li><b>Unable to load url '$file_url' into file '$filename'</b>:<br>
-	Commend to execute:<br><pre>exec /usr/bin/wget -q -O $filename $file_url</pre><br>
+	Commend to execute:<br><pre>im_exec wget -q -O $filename $file_url</pre><br>
 	Error message:<br><pre>[ns_quotehtml $err_msg]</pre>
     "
     ns_write "</ul>[im_footer]\n"
