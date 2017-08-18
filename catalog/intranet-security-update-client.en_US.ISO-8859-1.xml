@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <message_catalog package_key="intranet-security-update-client" locale="en_US" charset="ISO-8859-1">
 
+  <msg key="Get_ASUS_Update_information">Get ASUS Update Information</msg>
   <msg key="No_Updates_Available">No Updates Available</msg>
   <msg key="Release_Status_Information">Release Status Information</msg>
   <msg key="Security_Updates">Security Updates</msg>
