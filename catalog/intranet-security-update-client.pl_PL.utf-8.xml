@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <message_catalog package_key="intranet-security-update-client" locale="pl_PL" charset="utf-8">
 
-  <msg key="Automatic_Software_updates">Automatyczne Aktualizacje Oprogramowania</msg>
-  <msg key="Guide_Decide">Zdecyduj, czy chcesz zaktualizować</msg>
-  <msg key="Guide_Decide_Msg">Proszę sprawdzić na forum (link poniżej!) i zdecydować, czy chcesz wykonać aktualizację. Nie musisz wykonywać każdej aktualizacji.</msg>
-  <msg key="Guide_Error_Retreiving_Update_List">Błąd podczas pobierania listy dostępnych aktualizacji</msg>
-  <msg key="Guide_Perform_Code_Backup">Wykonywanie Kopii Zapasowej Kodu</msg>
-  <msg key="Guide_Perform_Code_Backup_Msg">Proszę zapisać kod źródłowy w &lt;install-dir&gt;\servers\projop\packages (Win32) or /web/projop/packages (Linux) ręcznie przy użyciu zip lub tar.</msg>
-  <msg key="Guide_Perform_Database_Backup">Wykonaj Kopię Zapasową Bazy Danych.</msg>
-  <msg key="Guide_Perform_Database_Backup_Msg">Proszę wykonać kopię zapasową bazy danych.</msg>
-  <msg key="Guide_Restart">Uruchom ponownie serwer</msg>
-  <msg key="Guide_Update">Zaktualizuj Swój System</msg>
-  <msg key="Guide_Upgrade_DB">Zaktualizuj swoją bazę danych</msg>
-  <msg key="Guide_Upgrade_System">Zaktualizuj system</msg>
-  <msg key="Guide_Upgrade_System_Msg">Naciśnięcie przycisku &quot;Update&quot; zaktualizuje Twój kod ]PO[.</msg>
+  <msg key="Get_ASUS_Update_information">Pobierz informacje aktualizacyjne ASUS</msg>
+  <msg key="No_Updates_Available">Brak dostępnych aktualizacji</msg>
+  <msg key="Release_Status_Information">Informacja o statusie wydania</msg>
   <msg key="Security_Updates">Aktualizacje zabezpieczeń</msg>
+  <msg key="Software_Updates">Aktualizacja oprogramowania</msg>
+  <msg key="Your_browser_cant_display_iframes">Twoja przeglądarka nie wyświetla IFrames</msg>
 </message_catalog>
