@@ -2,9 +2,16 @@
 <message_catalog package_key="intranet-security-update-client" locale="en_US" charset="ISO-8859-1">
 
   <msg key="Get_ASUS_Update_information">Get ASUS Update Information</msg>
+  <msg key="Load_Average">Load Average</msg>
   <msg key="No_Updates_Available">No Updates Available</msg>
+  <msg key="OS_Version">OS Version</msg>
+  <msg key="Platform">OS Platform</msg>
   <msg key="Release_Status_Information">Release Status Information</msg>
   <msg key="Security_Updates">Security Updates</msg>
+  <msg key="Server_Information">Server Informationen</msg>
   <msg key="Software_Updates">Software Updates</msg>
+  <msg key="System_Id">System Id</msg>
+  <msg key="TCL_Version">TCL Version</msg>
+  <msg key="Web_Server_Version">Web Server Version</msg>
   <msg key="Your_browser_cant_display_iframes">Your browser is not capable of displaying IFrames</msg>
 </message_catalog>

@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <message_catalog package_key="intranet-security-update-client" locale="de_DE" charset="ISO-8859-1">
 
-  <msg key="Get_ASUS_Update_information">Get ASUS Update Information</msg>
+  <msg key="Get_ASUS_Update_information">ASUS Aktualisierungsinformationen erhalten</msg>
+  <msg key="Load_Average">Server Last</msg>
+  <msg key="No_Updates_Available">Keine Updates verfügbar</msg>
+  <msg key="OS_Version">BS Version</msg>
+  <msg key="Platform">BS Plattform</msg>
+  <msg key="Release_Status_Information">Statusinformationen Freigabe</msg>
   <msg key="Security_Updates">Sicherheits-Updates</msg>
-  <msg key="Software_Updates">Software Aktualisierungen</msg>
+  <msg key="Server_Information">Server Informationen</msg>
+  <msg key="Software_Updates">Software-Updates</msg>
+  <msg key="System_Id">System ID</msg>
+  <msg key="TCL_Version">TCL Version</msg>
+  <msg key="Web_Server_Version">Web Server Version</msg>
   <msg key="Your_browser_cant_display_iframes">Ihr Browser kann keine IFrames anzeigen</msg>
 </message_catalog>
