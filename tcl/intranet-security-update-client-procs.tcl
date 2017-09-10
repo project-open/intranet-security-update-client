@@ -412,15 +412,15 @@ ad_proc im_security_update_client_component { } {
     }
 
     # Check for upgrades to run
-    set server_information "Server Information: 
+    set server_information "[_ intranet-security-update-client.Server_Information]: 
     <ul>
-	<li> &#93project-open&#91; version: [im_core_version]</li>
-	<li>Platform: $os_platform</li>
-	<li>OS Version: $os_version</li>
-	<li>TCL version: $tcl_version</li>
-	<li>Web Server version: $aol_version</li>
-	<li>System Id: [im_system_id]</li>
-	<li>Load Average: $load_avg</li>
+	<li> &#93project-open&#91; [_ intranet-core.Version]: [im_core_version]</li>
+	<li>[_ intranet-security-update-client.Platform]: $os_platform</li>
+	<li>[_ intranet-security-update-client.OS_Version]: $os_version</li>
+	<li>[_ intranet-security-update-client.TCL_Version]: $tcl_version</li>
+	<li>[_ intranet-security-update-client.Web_Server_Version]: $aol_version</li>
+	<li>[_ intranet-security-update-client.System_Id]: [im_system_id]</li>
+	<li>[_ intranet-security-update-client.Load_Average]: $load_avg</li>
     </ul><br><br>"
     set script_list [im_check_for_update_scripts]
 
