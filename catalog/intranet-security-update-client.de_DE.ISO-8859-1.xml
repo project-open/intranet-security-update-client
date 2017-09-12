@@ -2,6 +2,8 @@
 <message_catalog package_key="intranet-security-update-client" locale="de_DE" charset="ISO-8859-1">
 
   <msg key="Get_ASUS_Update_information">ASUS Aktualisierungsinformationen erhalten</msg>
+  <msg key="Guide_Perform_Code_Backup_Msg">Please save your source code at &amp;lt;install-dir&amp;gt;\\servers\\projop\\packages (Win)&lt;br&gt;
+or /web/projop/packages (Linux) manually using zip or tar.</msg>
   <msg key="Load_Average">Server Last</msg>
   <msg key="No_Updates_Available">Keine Updates verfügbar</msg>
   <msg key="OS_Version">BS Version</msg>

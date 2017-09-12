@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <message_catalog package_key="intranet-security-update-client" locale="en_US" charset="ISO-8859-1">
 
+  <msg key="Automatic_Software_updates">Automatic Software Updates</msg>
   <msg key="Get_ASUS_Update_information">Get ASUS Update Information</msg>
+  <msg key="Guide_Decide">Decide whether you want to update</msg>
+  <msg key="Guide_Decide_Msg">Decide whether you want to update</msg>
+  <msg key="Guide_Intro">The &lt;a href=&#39;http://www.project-open.com/en/asus&#39;&gt;Automatic Software Update Service (ASUS)&lt;/a&gt;
+keeps your %po% system up to date and fixes security issues.&#34;</msg>
+  <msg key="Guide_Perform_Code_Backup">Perform a Code Backup</msg>
+  <msg key="Guide_Perform_Code_Backup_Msg">Please save your source code at &amp;lt;install-dir&amp;gt;\\servers\\projop\\packages (Win)
+or /web/projop/packages (Linux) manually using zip or tar.</msg>
+  <msg key="Guide_Perform_Database_Backup">Perform a Database Backup</msg>
+  <msg key="Guide_Perform_Database_Backup_Msg">Please perform a &lt;a href=&#39;/intranet/admin/backup/&#39;&gt;database backup&lt;/a&gt;.</msg>
+  <msg key="Guide_Restart">Restart your server</msg>
+  <msg key="Guide_Restart_Msg">Please use the &lt;a href=&#39;/acs-admin/server-restart&#39;&gt;Server Restart&lt;/a&gt;
+    page to restart the server.</msg>
+  <msg key="Guide_Update">Update Your System</msg>
+  <msg key="Guide_Upgrade_DB">Update your database</msg>
+  <msg key="Guide_Upgrade_DB_Msg">Please use the &lt;a href=&#39;/acs-admin/apm/packages-install&#39;&gt;Package Manager&lt;/a&gt;
+    to update the database. Please check &lt;b&gt;only&lt;/b&gt; the &#39;Update&#39; options.&lt;br&gt;
+    Please don&#39;t perform any &#39;Install&#39; options unless you know what you are doing.</msg>
+  <msg key="Guide_Upgrade_System">Upgrade your System</msg>
+  <msg key="Guide_Upgrade_System_Msg">Pressing the &#39;Update&#39; button will update your %po% code.</msg>
   <msg key="Load_Average">Load Average</msg>
   <msg key="No_Updates_Available">No Updates Available</msg>
   <msg key="OS_Version">OS Version</msg>
