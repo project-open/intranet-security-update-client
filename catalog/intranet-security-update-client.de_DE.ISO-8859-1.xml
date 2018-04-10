@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <message_catalog package_key="intranet-security-update-client" locale="de_DE" charset="ISO-8859-1">
 
+  <msg key="Forum">Forum</msg>
+  <msg key="Get_ASUS_Exchange_Rates">Wechselkurse von ASUS holen</msg>
   <msg key="Get_ASUS_Update_information">ASUS Aktualisierungsinformationen erhalten</msg>
   <msg key="Guide_Perform_Code_Backup_Msg">Please save your source code at &amp;lt;install-dir&amp;gt;\\servers\\projop\\packages (Win)&lt;br&gt;
 or /web/projop/packages (Linux) manually using zip or tar.</msg>
   <msg key="Load_Average">Durschnittliche Last</msg>
   <msg key="No_Updates_Available">Keine Updates verfügbar</msg>
   <msg key="OS_Version">OS-Version</msg>
+  <msg key="Package">Package</msg>
   <msg key="Platform">OS-Plattform</msg>
+  <msg key="Release_Date">Datum Freigabe</msg>
   <msg key="Release_Status_Information">Statusinformationen Freigabe</msg>
   <msg key="Security_Updates">Sicherheits-Updates</msg>
   <msg key="Server_Information">Server Informationen</msg>
   <msg key="Software_Updates">Software-Updates</msg>
   <msg key="System_Id">System-ID</msg>
   <msg key="TCL_Version">TCL-Version</msg>
+  <msg key="Update">Update</msg>
+  <msg key="Version">Version</msg>
   <msg key="Web_Server_Version">Web Server Version</msg>
   <msg key="Your_browser_cant_display_iframes">Ihr Browser kann keine IFrames anzeigen</msg>
 </message_catalog>
