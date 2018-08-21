@@ -41,7 +41,7 @@ im_report_write_http_headers -output_format html
 
 ns_write "
         [im_header]
-        [im_navbar]
+        [im_navbar finance]
 
 	<h2>Getting data</h2>
 	<ul>
