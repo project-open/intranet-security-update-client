@@ -60,7 +60,7 @@ The ASUS service performs several actions:
 <br>
 <h2>Price</h2>
 <p>
-ASUS is a free service at the moment (June 2017). However, 
+ASUS is a free service at the moment (January 2020). However, 
 we plan to introduce a yearly fee for ASUS in the future.
 We will notify you about possible changes with three months in 
 advance. 
@@ -74,12 +74,13 @@ In order to check your system we need to collect data from
 your installation. 
 This information includes the version of your @po;noquote@ 
 packages, your operating system and your PostgreSQL database.
-Also, we will generate an anonymous unique ID for your hardware 
-and your @po;noquote@ installation and transmit the number of
-users in your system in order to maintain statistics about
-the product.
+Also, we will generate a unique ID for your hardware and your 
+@po;noquote@ installation and transmit the number of users 
+in your system in order to maintain statistics about the 
+product.
 Collecting your email address will allow us to alert you 
-in case of critical security threads.
+in case of critical security threads. We will never sell
+or transmit this data to third parties.
 </p>
 
 
