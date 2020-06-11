@@ -1,5 +1,43 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <message_catalog package_key="intranet-security-update-client" locale="nl_NL" charset="ISO-8859-1">
 
-  <msg key="Security_Updates">Beveiligings updates</msg>
+  <msg key="Automatic_Software_updates">Automatische software updates</msg>
+  <msg key="Forum">Forum</msg>
+  <msg key="Get_ASUS_Exchange_Rates">Verkrijg ASUS wisselkoersen</msg>
+  <msg key="Get_ASUS_Update_information">Verkrijg ASUS update informatie</msg>
+  <msg key="Guide_Decide">Beslis of je wil updaten</msg>
+  <msg key="Guide_Decide_Msg">Beslis wat je wil updaten</msg>
+  <msg key="Guide_Intro">De &lt;a href=&#39;http://www.project-open.com/en/asus&#39;&gt;Automatic Software Update Service (ASUS)&lt;/a&gt;
+houdt het %po% systeem up to date en herstelt veiligheid issues.&#34;</msg>
+  <msg key="Guide_Perform_Code_Backup">Maak een backup van de code</msg>
+  <msg key="Guide_Perform_Code_Backup_Msg">Sla de source code op, op &amp;lt;install-dir&amp;gt;\\servers\\projop\\packages (Win)
+of handmatig  /web/promista/packages (Linux) via zip of tar.</msg>
+  <msg key="Guide_Perform_Database_Backup">Maak een database backup</msg>
+  <msg key="Guide_Perform_Database_Backup_Msg">Maak een backup van de &lt;a href=&#39;/intranet/admin/backup/&#39;&gt;uit&lt;/a&gt;.</msg>
+  <msg key="Guide_Restart">Herstart de server</msg>
+  <msg key="Guide_Restart_Msg">Gebruik de &lt;a href=&#39;/acs-admin/server-restart&#39;&gt;Server Restart&lt;/a&gt;
+    pagina om de server te herstarten.</msg>
+  <msg key="Guide_Update">Update het systeem</msg>
+  <msg key="Guide_Upgrade_DB">Update je database</msg>
+  <msg key="Guide_Upgrade_DB_Msg">Gebruik de &lt;a href=&#39;/acs-admin/apm/packages-install&#39;&gt;Package Manager&lt;/a&gt;
+    om de database te updaten. Controleer &lt;b&gt;alleen&lt;/b&gt; de &#39;Update&#39; opties.&lt;br&gt;
+    Voer geen &#39;Install&#39; opties uit tenzij je goed weet wat je doet!</msg>
+  <msg key="Guide_Upgrade_System">Upgrade je systeem</msg>
+  <msg key="Guide_Upgrade_System_Msg">Drukken op de &#39;Update&#39; knop zal je %po% code updaten.</msg>
+  <msg key="Load_Average">Gemiddelde belasting</msg>
+  <msg key="No_Updates_Available">Geen updates beschikbaar</msg>
+  <msg key="OS_Version">OS Versie</msg>
+  <msg key="Package">Package</msg>
+  <msg key="Platform">OS Platform</msg>
+  <msg key="Release_Date">Release Datum</msg>
+  <msg key="Release_Status_Information">Release Status Informatie</msg>
+  <msg key="Security_Updates">Beveiliging updates</msg>
+  <msg key="Server_Information">Server Informatie</msg>
+  <msg key="Software_Updates">Software Updates</msg>
+  <msg key="System_Id">Systeem Id</msg>
+  <msg key="TCL_Version">TCL Versie</msg>
+  <msg key="Update">Update</msg>
+  <msg key="Version">Versie</msg>
+  <msg key="Web_Server_Version">Web Server Versie</msg>
+  <msg key="Your_browser_cant_display_iframes">Je browser kan geen IFrames tonen</msg>
 </message_catalog>
