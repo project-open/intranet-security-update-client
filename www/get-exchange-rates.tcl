@@ -51,7 +51,7 @@ ns_write "
 # Fetch the update.xml file from the remote server
 #
 
-ns_write "<li>Getting exchange rates XML file from '$currency_update_url' ...\n"
+ns_write "<li>Getting exchange rates XML file from '[ns_quotehtml $currency_update_url]' ...\n"
 
 set update_xml ""
 if { [catch {
