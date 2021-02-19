@@ -290,7 +290,7 @@ ad_proc im_security_update_client_component { } {
 
     set package_key "intranet-security-update-client"
     set package_id [db_string package_id "select package_id from apm_packages where package_key=:package_key" -default 0]
-    set sec_url_base [parameter::get -package_id $package_id -parameter "SecurityUpdateServerUrl" -default "http://www.project-open.net/intranet-asus-server/update-information"]
+    set sec_url_base [parameter::get -package_id $package_id -parameter "SecurityUpdateServerUrl" -default "https://www.project-open.net/intranet-asus-server/update-information"]
 
     # Verbose ASUS configuration?
     # May redirect to user-agreement to confirm ASUS terms & conditions
@@ -424,6 +424,9 @@ ad_proc im_security_update_client_component { } {
     </ul><br><br>"
     set script_list [im_check_for_update_scripts]
 
+#    security::csp::require frame-src "*.project-open.net"
+#    security::csp::require frame-src "'self'"
+
     set sec_html "
 	<table width='600'>
         <tr valign=top>
@@ -481,7 +484,7 @@ ad_proc im_security_update_connected_email {
     to the current system_id
 } {
     set system_id [im_system_id]
-    set service_base_url "http://www.project-open.net/intranet-asus-server/connected-user-account.xml"
+    set service_base_url "https://www.project-open.net/intranet-asus-server/connected-user-account.xml"
     set full_url [export_vars -base $service_base_url {system_id}]
     set update_xml ""
     set error_msg ""
