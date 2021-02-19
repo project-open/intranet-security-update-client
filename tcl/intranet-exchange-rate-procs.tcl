@@ -81,9 +81,11 @@ ad_proc im_security_update_get_currency_update_url { } {
 } {
     set currency_update_url [parameter::get_from_package_key -package_key "intranet-exchange-rate" -parameter "ExchangeRateUpdateUrl" -default "http://www.project-open.net/intranet-asus-server/exchange-rates.xml"]
 
+    set currency [db_list active_currencies "select iso from currency_codes where supported_p = 't' order by iso"]
+
     # Construct the URL
     set system_id [im_system_id]
-    set full_url [export_vars -base $currency_update_url {system_id}]
+    set full_url [export_vars -base $currency_update_url {system_id currency}]
 
     return $full_url
 }
