@@ -28,9 +28,9 @@ for new versions and follow the update instructions.
 
 The ASUS service is a convenience service that automates updates. 
 The ASU service is <i>not free</i>. 
-Please read <a href="http://www.project-open.com/en/services/#asus">Overview</a> 
+Please read <a href="https://www.project-open.com/en/services/#asus">Overview</a> 
 and the <a href="disclaimer">Disclaimer</a>.
-Then <a href="http://www.project-open.net/register/user-new?return_url=/intranet-cust-projop/asus/new-asus"
+Then <a href="https://www.project-open.net/register/user-new?return_url=/intranet-cust-projop/asus/new-asus"
 >Register your Account</a>. We will contact you for details.
 
 
@@ -45,7 +45,7 @@ Then <a href="http://www.project-open.net/register/user-new?return_url=/intranet
     <br>&nbsp;
 
 <li><b>Test your ASUS account</b>:<br>
-    Login manually at <a href="http://www.project-open.net/">http://www.project-open.net/</a>
+    Login manually at <a href="https://www.project-open.net/">https://www.project-open.net/</a>
     using your ASUS email/password.
     <br>&nbsp;
 

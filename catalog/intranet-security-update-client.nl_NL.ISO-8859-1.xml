@@ -7,7 +7,7 @@
   <msg key="Get_ASUS_Update_information">Verkrijg ASUS update informatie</msg>
   <msg key="Guide_Decide">Beslis of je wil updaten</msg>
   <msg key="Guide_Decide_Msg">Beslis wat je wil updaten</msg>
-  <msg key="Guide_Intro">De &lt;a href=&#39;http://www.project-open.com/en/asus&#39;&gt;Automatic Software Update Service (ASUS)&lt;/a&gt;
+  <msg key="Guide_Intro">De &lt;a href=&#39;https://www.project-open.com/en/asus&#39;&gt;Automatic Software Update Service (ASUS)&lt;/a&gt;
 houdt het %po% systeem up to date en herstelt veiligheid issues.&#34;</msg>
   <msg key="Guide_Perform_Code_Backup">Maak een backup van de code</msg>
   <msg key="Guide_Perform_Code_Backup_Msg">Sla de source code op, op &amp;lt;install-dir&amp;gt;\\servers\\projop\\packages (Win)

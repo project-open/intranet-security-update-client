@@ -7,7 +7,7 @@
   <msg key="Get_ASUS_Update_information">Get ASUS Update Information</msg>
   <msg key="Guide_Decide">Decide whether you want to update</msg>
   <msg key="Guide_Decide_Msg">Decide whether you want to update</msg>
-  <msg key="Guide_Intro">The &lt;a href=&#39;http://www.project-open.com/en/asus&#39;&gt;Automatic Software Update Service (ASUS)&lt;/a&gt;
+  <msg key="Guide_Intro">The &lt;a href=&#39;https://www.project-open.com/en/asus&#39;&gt;Automatic Software Update Service (ASUS)&lt;/a&gt;
 keeps your %po% system up to date and fixes security issues.&#34;</msg>
   <msg key="Guide_Perform_Code_Backup">Perform a Code Backup</msg>
   <msg key="Guide_Perform_Code_Backup_Msg">Please save your source code at &amp;lt;install-dir&amp;gt;\\servers\\projop\\packages (Win)

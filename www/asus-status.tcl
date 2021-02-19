@@ -3,7 +3,7 @@
 # Copyright (C) 2003 - 2009 ]project-open[
 #
 # All rights reserved. Please check
-# http://www.project-open.com/license/ for details.
+# https://www.project-open.com/license/ for details.
 #
 
 ad_page_contract {
@@ -18,7 +18,7 @@ ad_page_contract {
 
 set page_title [lang::message::lookup "" intranet-security-update-client.Account_Status "Account Status"]
 
-set po_server "http://www.project-open.net"
+set po_server "https://www.project-open.net"
 set po "&#93;project-open&#91;"
 
 set current_url [ns_conn url]

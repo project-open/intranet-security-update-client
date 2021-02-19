@@ -3,7 +3,7 @@
 # Copyright (C) 2003 - 2009 ]project-open[
 #
 # All rights reserved. Please check
-# http://www.project-open.com/ for licensing details.
+# https://www.project-open.com/ for licensing details.
 
 ad_page_contract {
     Main page of the software update service
@@ -32,7 +32,7 @@ set context_bar [im_context_bar $page_title]
 
 set projop "<span class=brandsec>&#93;</span><span class=brandfirst>project-open</span><span class=brandsec>&#91;</span>"
 set po "<span class=brandsec>&#93;</span><span class=brandfirst>po</span><span class=brandsec>&#91;</span>"
-set po_wiki "http://www.project-open.com/en"
+set po_wiki "https://www.project-open.com/en"
 
 # Redirects to ASUS terms & conditions if not yet agreed
 set asus_verbosity [im_security_update_asus_status]
@@ -44,7 +44,7 @@ set asus_verbosity [im_security_update_asus_status]
 
 set core_version [im_core_version]
 set system_id [im_system_id]
-set service_url "http://www.project-open.net/intranet-asus-server/update-list"
+set service_url "https://www.project-open.net/intranet-asus-server/update-list"
 set full_url [export_vars -base $service_url {system_id core_version}]
 
 # ------------------------------------------------------------
@@ -140,7 +140,7 @@ if {[string tolower $tag1] eq "/table" || [string tolower $tag1] eq "html" || [s
 #  <update_list>
 #   <update>
 #     <package_name>intranet-wiki</package_name>
-#     <package_url>http://www.project-open.com/product/modules/km/wiki.html</package_url>
+#     <package_url>https://www.project-open.com/product/modules/km/wiki.html</package_url>
 #     <package_version>3.0.0</package_version>
 #     <po_version>3.0.beta8</po_version>
 #     <po_version_url></po_version_url>

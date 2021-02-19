@@ -3,7 +3,7 @@
 # Copyright (C) 2003 - 2009 ]project-open[
 #
 # All rights reserved. Please check
-# http://www.project-open.com/license/ for details.
+# https://www.project-open.com/license/ for details.
 
 
 ad_library {
@@ -30,7 +30,7 @@ ad_proc im_security_update_backup_component {
     return ""
 
     set system_id [im_system_id]
-    set service_base_url "http://www.project-open.net/intranet-asus-server/backup-files.xml"
+    set service_base_url "https://www.project-open.net/intranet-asus-server/backup-files.xml"
     set full_url [export_vars -base $service_base_url {system_id}]
     set update_xml ""
     set error_msg ""
@@ -166,7 +166,7 @@ ad_proc im_security_update_backup_component {
     append html $form_html
 
     xml_doc_free $tree
-    set saas_url "http://www.project-open.com/en/services/project-open-hosting-saas.html"
+    set saas_url "https://www.project-open.com/en/services/project-open-hosting-saas.html"
     return "
 <table class=backup_table>
 <tr>

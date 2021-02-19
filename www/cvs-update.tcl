@@ -99,7 +99,7 @@ if {$platform eq "windows"} {
         <p>Unable to execute update command:<br><pre>$cmd\n</pre>
 	The server returned the error:
 	<pre>$errmsg\n</pre>
-	<a href=\"http://www.project-open.com/en/contact\">
+	<a href=\"https://www.project-open.com/en/contact\">
         Please send us a note
         </a>:
         <pre>"
@@ -148,7 +148,7 @@ if {[catch {
         <p>Unable to execute update command:<br><pre>$cmd\n</pre>
 	The server returned the error:
 	<pre>$errmsg\n</pre>
-	<a href=\"http://www.project-open.com/en/contact\">
+	<a href=\"https://www.project-open.com/en/contact\">
         Please send us a note
         </a>:
         <pre>"
@@ -188,7 +188,7 @@ if {!$error} {
         <p>Unable to execute update command:<br><pre>$cmd\n</pre>
 	The server returned the error:
 	<pre>$errmsg\n</pre>
-	<a href=\"http://www.project-open.com/en/contact\">
+	<a href=\"https://www.project-open.com/en/contact\">
         Please send us a note
         </a>:
         <pre>"
@@ -227,7 +227,7 @@ if {$platform eq "windows"} {
         <p>Unable to execute update command:<br><pre>$cmd\n</pre>
 	The server returned the error:
 	<pre>$errmsg\n</pre>
-	<a href=\"http://www.project-open.com/en/contact\">
+	<a href=\"https://www.project-open.com/en/contact\">
         Please send us a note
         </a>:
         <pre>"

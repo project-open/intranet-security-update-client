@@ -23,7 +23,7 @@ set user_id [auth::require_login]
 # ------------------------------------------------------
  
 set system_id [im_system_id]
-set service_base_url "http://www.project-open.net/intranet-asus-server/delete-asus-file.xml"
+set service_base_url "https://www.project-open.net/intranet-asus-server/delete-asus-file.xml"
 set full_url [export_vars -base $service_base_url {system_id}]
 set update_xml ""
 set error_msg ""

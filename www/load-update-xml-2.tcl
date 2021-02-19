@@ -41,7 +41,7 @@ set core_version [lindex $core_versions 0]
 
 
 set system_id [im_system_id]
-set service_url "http://www.project-open.net/intranet-asus-server/update-list"
+set service_url "https://www.project-open.net/intranet-asus-server/update-list"
 set full_url [export_vars -base $service_url {system_id core_version}]
 
 
@@ -123,7 +123,7 @@ ns_log notice "load-update-xml-2: update_xml=$update_xml"
 #  <update_list>
 #   <update>
 #     <package_name>intranet-wiki</package_name>
-#     <package_url>http://www.project-open.com/product/modules/km/wiki.html</package_url>
+#     <package_url>https://www.project-open.com/product/modules/km/wiki.html</package_url>
 #     <package_version>3.0.0</package_version>
 #     <po_version>3.0.beta8</po_version>
 #     <po_version_url></po_version_url>

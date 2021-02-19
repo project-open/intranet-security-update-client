@@ -3,7 +3,7 @@
 # Copyright (C) 2003 - 2009 ]project-open[
 #
 # All rights reserved. Please check
-# http://www.project-open.com/license/ for details.
+# https://www.project-open.com/license/ for details.
 
 
 ad_library {
@@ -79,7 +79,7 @@ ad_proc -public im_security_update_exchange_rate_sweeper { } {
 ad_proc im_security_update_get_currency_update_url { } {
     Get the URL from which we can retreive an update XML file.
 } {
-    set currency_update_url [parameter::get_from_package_key -package_key "intranet-exchange-rate" -parameter "ExchangeRateUpdateUrl" -default "http://www.project-open.net/intranet-asus-server/exchange-rates.xml"]
+    set currency_update_url [parameter::get_from_package_key -package_key "intranet-exchange-rate" -parameter "ExchangeRateUpdateUrl" -default "https://www.project-open.net/intranet-asus-server/exchange-rates.xml"]
 
     set currency [db_list active_currencies "select iso from currency_codes where supported_p = 't' order by iso"]
 

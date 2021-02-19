@@ -39,7 +39,7 @@
 <td>
 	<h1><nobr>@page_title@</nobr></h1>
 	<%= [lang::message::lookup "" intranet-security-update-client.Guide_Intro "
-	The <a href='http://www.project-open.com/en/asus'>Automatic Software Update Service (ASUS)</a> 
+	The <a href='https://www.project-open.com/en/asus'>Automatic Software Update Service (ASUS)</a> 
 	keeps your @po;noquote@ system up to date and fixes security issues."] %><br>&nbsp;
 	<h2><%= [lang::message::lookup "" intranet-security-update-client.Guide_Update "Update Your System"] %></h2>
 </td>
