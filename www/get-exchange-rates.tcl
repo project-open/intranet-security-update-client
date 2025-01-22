@@ -35,9 +35,7 @@ set currency_update_url [im_security_update_get_currency_update_url]
 
 
 # Write out HTTP header
-im_report_write_http_headers -output_format html
-
-
+im_report_write_http_headers -output_format html -report_name "exchange-rates"
 
 ns_write "
         [im_header]

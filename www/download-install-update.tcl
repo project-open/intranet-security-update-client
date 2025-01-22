@@ -58,7 +58,7 @@ set file_url [export_vars -base $url {system_id}]
 # -------------------------------------------------------
 
 # Write out HTTP header
-im_report_write_http_headers -output_format html
+im_report_write_http_headers -output_format html  -report_name "download-install-update"
 
 # Add the HTML select box to the head of the page
 ns_write [im_header]
