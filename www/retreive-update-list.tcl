@@ -44,7 +44,15 @@ set asus_verbosity [im_security_update_asus_status]
 
 set core_version [im_core_version]
 set system_id [im_system_id]
-set service_url "https://www.project-open.net/intranet-asus-server/update-list"
+
+# Use update-information as base, but replace last URL piece
+set sec_url_base [parameter::get_from_package_key -package_key "intranet-security-update-client" -parameter "SecurityUpdateServerUrl" -default "https://www.project-open.net/intranet-asus-server/update-information"]
+set sec_url_pieces [split $sec_url_base "/"]
+set update_list_pieces [lrange $sec_url_pieces 0 end-1]
+lappend update_list_pieces "update-list"
+set service_url [join $update_list_pieces "/"]
+# set service_url "https://www.project-open.net/intranet-asus-server/update-list"
+
 set full_url [export_vars -base $service_url {system_id core_version}]
 
 # ------------------------------------------------------------
